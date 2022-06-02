@@ -2,11 +2,14 @@ from aiogram import Dispatcher, types
 from create_bot import dp, bot
 from keyboards import *
 from aiogram.types import ReplyKeyboardRemove
-
+from service_templates import *
 # Приветствие
 async def command_start(message : types.Message):
     try:
-        await bot.send_message(message.from_user.id, 'Саламатсызбы! Сиз менен Кыргыз Республикасынын Россия Федерациясындагы Элчилигинин электрондук консулу байланышта. Керектүү тилди тандаңыз\n\nВас приветствует электронный консул Посольства Кыргызской Республики в Российской Федерации! Выберите нужный язык обслуживания', reply_markup=kb_language)
+        await bot.send_message(message.from_user.id, 'Саламатсызбы! Сиз менен Кыргыз Республикасынын Россия \
+        Федерациясындагы Элчилигинин электрондук консулу байланышта. Керектүү тилди тандаңыз\n\n\
+Вас приветствует электронный консул Посольства Кыргызской Республики в Российской Федерации! \
+Выберите нужный язык обслуживания', reply_markup=kb_language)
         await message.delete()
     except:
         await message.reply('Общение с ботом через ЛС, напишите ему: \nhttps://t.me/KyrgyzConsulate_ruBot')
@@ -35,14 +38,66 @@ async def consulate_open_kg_cmd(message : types.Message):
 async def passport_kg_cmd(message : types.Message):
     await bot.send_message(message.from_user.id, 'Ылайыктуу себебин тандаңыз', reply_markup=kb_passport_kg)
 
+async def passport_ru_cmd(message : types.Message):
+    await bot.send_message(message.from_user.id, 'Выберите нужный вариант', reply_markup=kb_passport_ru)
+
+
+
 async def passport_kg_ogp_cmd(message : types.Message):
     await bot.send_message(message.from_user.id, 'Ылайыктуу себебин тандаңыз', reply_markup=kb_kg_ogp)
 
+async def passport_ru_ogp_cmd(message : types.Message):
+    await bot.send_message(message.from_user.id, 'Выберите нужный вариант', reply_markup=kb_ru_ogp)
+
+
+
 async def passport_kg_ogpBefore18_cmd(message : types.Message):
-    await bot.send_message(message.from_user.id, '18-жашка чыга элек КРнын жаранынын атына КРнын жалпы жарандык паспортун тариздөө/алмаштыруу максатында төмөндөгү документтер керектелет:')
+    await bot.send_message(message.from_user.id, passport_kg_ogpBefore18_tmp)
+
+async def passport_ru_ogpBefore18_cmd(message : types.Message):
+    await bot.send_message(message.from_user.id, passport_ru_ogpBefore18_tmp)
+
+
 
 async def passport_kg_ogpAfter18_cmd(message : types.Message):
-    await bot.send_message(message.from_user.id, '18-жашка чыккан КРнын жарандын атына КРнын жалпы жарандык паспортун алмаштыруу максатында төмөндөгү документтер керектелет (жаран өздүк маалыматтарын өзгөрткөн учурунда):')
+    await bot.send_message(message.from_user.id, passport_kg_ogpAfter18_tmp)
+
+async def passport_ru_ogpAfter18_cmd(message : types.Message):
+    await bot.send_message(message.from_user.id, passport_ru_ogpAfter18_tmp)
+
+
+
+async def passport_kg_idp_cmd(message : types.Message):
+    await bot.send_message(message.from_user.id, 'Ылайыктуу себебин тандаңыз', reply_markup=kb_kg_idp)
+
+async def passport_ru_idp_cmd(message : types.Message):
+    await bot.send_message(message.from_user.id, 'Выберите нужный вариант', reply_markup=kb_ru_idp)
+
+
+
+async def passport_kg_idpBefore18_cmd(message : types.Message):
+    await bot.send_message(message.from_user.id, passport_kg_idpBefore18_tmp)
+
+async def passport_ru_idpBefore18_cmd(message : types.Message):
+    await bot.send_message(message.from_user.id, passport_ru_idpBefore18_tmp)
+
+
+
+async def passport_kg_idpAfter18_cmd(message : types.Message):
+    await bot.send_message(message.from_user.id, passport_kg_idpAfter18_tmp)
+
+async def passport_ru_idpAfter18_cmd(message : types.Message):
+    await bot.send_message(message.from_user.id, passport_ru_idpAfter18_tmp)
+
+
+
+# Предварительная запись
+async def preRegstration_kg_cmd(message : types.Message):
+    await bot.send_message(message.from_user.id, 'Алдын ала катталуу үчүн төмөндөгү шилтемени басыңыз', reply_markup=urlKb_kg_preReg)
+
+async def preRegstration_ru_cmd(message : types.Message):
+    await bot.send_message(message.from_user.id, 'Для записи необходимо перейти по ссылке ниже', reply_markup=urlKb_ru_preReg)
+
 
 # Хэндлеры для импорта
 def register_handlers_client(dp : Dispatcher):
@@ -55,8 +110,25 @@ def register_handlers_client(dp : Dispatcher):
     dp.register_message_handler(consulate_open_kg_cmd, commands=['Дареги_жана_иш_тартиби'])
 
     dp.register_message_handler(passport_kg_cmd, commands=['Паспорт_алуу'])
+    dp.register_message_handler(passport_ru_cmd, commands=['Получение_паспорта'])
 
     dp.register_message_handler(passport_kg_ogp_cmd, commands=['Жалпы_жарандык_паспорт'])
+    dp.register_message_handler(passport_ru_ogp_cmd, commands=['Общегражданский_паспорт(Загран_паспорт)'])
 
     dp.register_message_handler(passport_kg_ogpBefore18_cmd, commands=['18-жашка_чейинки_өспүрүмдөргө'])
+    dp.register_message_handler(passport_ru_ogpBefore18_cmd, commands=['18-Для_граждан_до_18_лет'])
+
     dp.register_message_handler(passport_kg_ogpAfter18_cmd, commands=['18-жашка_толгон_жарандарга'])
+    dp.register_message_handler(passport_ru_ogpAfter18_cmd, commands=['18-Для_граждан_старше_18_лет'])
+
+    dp.register_message_handler(passport_kg_idp_cmd, commands=['Идентификациялык_карта(ID-паспорт)'])
+    dp.register_message_handler(passport_ru_idp_cmd, commands=['Идентификационный_паспорт_(ID)'])
+
+    dp.register_message_handler(passport_kg_idpBefore18_cmd, commands=['18-жашка_чыга_элек_жаранга_ID-паспорт_алуу'])
+    dp.register_message_handler(passport_ru_idpBefore18_cmd, commands=['Для_граждан_до_18_лет'])
+
+    dp.register_message_handler(passport_kg_idpAfter18_cmd, commands=['18-жашка_чыккан_жарандарга_ID-паспорт_алуу'])
+    dp.register_message_handler(passport_ru_idpAfter18_cmd, commands=['Для_граждан_старше_18_лет'])
+
+    dp.register_message_handler(preRegstration_kg_cmd, commands=['Электрондук_иретке_катталуу'])
+    dp.register_message_handler(preRegstration_ru_cmd, commands=['Электронная_очередь'])

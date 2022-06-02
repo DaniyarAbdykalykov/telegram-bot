@@ -1,1 +1,1 @@
-from service_templates.passport_templates import *
+from service_templates.templates import *

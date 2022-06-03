@@ -18,28 +18,28 @@ async def command_start(message : types.Message):
 
 # Выбор языка------------------------------------------------------------------------------------
 async def service_language_kg_cmd(message : types.Message):
-    await bot.send_message(message.from_user.id, 'Кызматты тандаңыз', reply_markup=kb_main_kg_menu)
+    await bot.send_message(message.from_user.id, 'Ылайыктуу себебин тандаңыз', reply_markup=kb_main_kg_menu)
 
 async def service_language_ru_cmd(message : types.Message):
-    await bot.send_message(message.from_user.id, 'Выберите услугу', reply_markup=kb_main_ru_menu)
+    await bot.send_message(message.from_user.id, 'Выберите нужный вариант', reply_markup=kb_main_ru_menu)
 
 
 
 # Главное меню------------------------------------------------------------------------------------
 async def mainMenu_kg_cmd(message : types.Message):
-    await bot.send_message(message.from_user.id, 'Кызматты тандаңыз', reply_markup=kb_main_kg_menu)
+    await bot.send_message(message.from_user.id, 'Ылайыктуу себебин тандаңыз', reply_markup=kb_main_kg_menu)
 
 async def mainMenu_ru_cmd(message : types.Message):
-    await bot.send_message(message.from_user.id, 'Выберите услугу', reply_markup=kb_main_ru_menu)
+    await bot.send_message(message.from_user.id, 'Выберите нужный вариант', reply_markup=kb_main_ru_menu)
 
 
 
 # Адрес и график работы------------------------------------------------------------------------------------
 async def consulate_open_ru_cmd(message : types.Message):
-    await bot.send_message(message.from_user.id, 'График работы: Пн-Пт с 9:00 до 18:00. Адрес: Москва, ул. Большая Ордынка, 62 стр. 2 (вход с Погорельского переулка')
+    await bot.send_message(message.from_user.id, consulate_open_ru_tmp, parse_mode=types.ParseMode.HTML)
 
 async def consulate_open_kg_cmd(message : types.Message):
-    await bot.send_message(message.from_user.id, 'Москва ш. Большая Ордынка к. 62/1. (метро Добрынинская). Дүйшөмбү-Жума күндөрү саат 9:00-18:00 чейин.')
+    await bot.send_message(message.from_user.id, consulate_open_kg_tmp, parse_mode=types.ParseMode.HTML)
 
 
 
@@ -51,7 +51,7 @@ async def passport_ru_cmd(message : types.Message):
     await bot.send_message(message.from_user.id, 'Выберите нужный вариант', reply_markup=kb_passport_ru)
 
 
-
+# ОГП
 async def passport_kg_ogp_cmd(message : types.Message):
     await bot.send_message(message.from_user.id, 'Ылайыктуу себебин тандаңыз', reply_markup=kb_kg_ogp)
 
@@ -61,21 +61,45 @@ async def passport_ru_ogp_cmd(message : types.Message):
 
 
 async def passport_kg_ogpBefore18_cmd(message : types.Message):
-    await bot.send_message(message.from_user.id, passport_kg_ogpBefore18_tmp)
+    await bot.send_message(message.from_user.id, passport_kg_ogpBefore18_tmp, parse_mode=types.ParseMode.HTML)
 
 async def passport_ru_ogpBefore18_cmd(message : types.Message):
-    await bot.send_message(message.from_user.id, passport_ru_ogpBefore18_tmp)
+    await bot.send_message(message.from_user.id, passport_ru_ogpBefore18_tmp, parse_mode=types.ParseMode.HTML)
 
 
 
 async def passport_kg_ogpAfter18_cmd(message : types.Message):
-    await bot.send_message(message.from_user.id, passport_kg_ogpAfter18_tmp)
+    await bot.send_message(message.from_user.id, 'Ылайыктуу себебин тандаңыз', reply_markup=kb_kg_ogpAfter18)
 
 async def passport_ru_ogpAfter18_cmd(message : types.Message):
-    await bot.send_message(message.from_user.id, passport_ru_ogpAfter18_tmp)
+    await bot.send_message(message.from_user.id, 'Выберите нужный вариант', reply_markup=kb_ru_ogpAfter18)
 
 
 
+async def passport_kg_ogpAfter18Tern_cmd(message : types.Message):
+    await bot.send_message(message.from_user.id, passport_kg_ogpAfter18Tern_tmp, parse_mode=types.ParseMode.HTML)
+
+async def passport_ru_ogpAfter18Tern_cmd(message : types.Message):
+    await bot.send_message(message.from_user.id, passport_ru_ogpAfter18Tern_tmp, parse_mode=types.ParseMode.HTML)
+
+
+
+async def passport_kg_ogpAfter18Loss_cmd(message : types.Message):
+    await bot.send_message(message.from_user.id, passport_kg_ogpAfter18Loss_tmp, parse_mode=types.ParseMode.HTML)
+
+async def passport_ru_ogpAfter18Loss_cmd(message : types.Message):
+    await bot.send_message(message.from_user.id, passport_ru_ogpAfter18Loss_tmp, parse_mode=types.ParseMode.HTML)
+
+
+
+async def passport_kg_ogpAfter18Change(message : types.Message):
+    await bot.send_message(message.from_user.id, passport_kg_ogpAfter18Change_tmp, parse_mode=types.ParseMode.HTML)
+
+async def passport_ru_ogpAfter18Change(message : types.Message):
+    await bot.send_message(message.from_user.id, passport_ru_ogpAfter18Change_tmp, parse_mode=types.ParseMode.HTML)
+
+
+# ID паспорт
 async def passport_kg_idp_cmd(message : types.Message):
     await bot.send_message(message.from_user.id, 'Ылайыктуу себебин тандаңыз', reply_markup=kb_kg_idp)
 
@@ -85,18 +109,42 @@ async def passport_ru_idp_cmd(message : types.Message):
 
 
 async def passport_kg_idpBefore18_cmd(message : types.Message):
-    await bot.send_message(message.from_user.id, passport_kg_idpBefore18_tmp)
+    await bot.send_message(message.from_user.id, passport_kg_idpBefore18_tmp, parse_mode=types.ParseMode.HTML)
 
 async def passport_ru_idpBefore18_cmd(message : types.Message):
-    await bot.send_message(message.from_user.id, passport_ru_idpBefore18_tmp)
+    await bot.send_message(message.from_user.id, passport_ru_idpBefore18_tmp, parse_mode=types.ParseMode.HTML)
 
 
 
 async def passport_kg_idpAfter18_cmd(message : types.Message):
-    await bot.send_message(message.from_user.id, passport_kg_idpAfter18_tmp)
+    await bot.send_message(message.from_user.id, 'Ылайыктуу себебин тандаңыз', reply_markup=kb_kg_idpAfter18)
 
 async def passport_ru_idpAfter18_cmd(message : types.Message):
-    await bot.send_message(message.from_user.id, passport_ru_idpAfter18_tmp)
+    await bot.send_message(message.from_user.id, 'Выберите нужный вариант', reply_markup=kb_ru_idpAfter18)
+
+
+async def passport_kg_idpAfter18Tern_cmd(message : types.Message):
+    await bot.send_message(message.from_user.id, passport_kg_idpAfter18Tern_tmp, parse_mode=types.ParseMode.HTML)
+
+async def passport_ru_idpAfter18Tern_cmd(message : types.Message):
+    await bot.send_message(message.from_user.id, passport_ru_idpAfter18Tern_tmp, parse_mode=types.ParseMode.HTML)
+
+
+async def passport_kg_idpAfter18Loss_cmd(message : types.Message):
+    await bot.send_message(message.from_user.id, passport_kg_idpAfter18Loss_tmp, parse_mode=types.ParseMode.HTML)
+
+async def passport_ru_idpAfter18Loss_cmd(message : types.Message):
+    await bot.send_message(message.from_user.id, passport_ru_idpAfter18Loss_tmp, parse_mode=types.ParseMode.HTML)
+
+
+async def passport_kg_idpAfter18Change_cmd(message : types.Message):
+    await bot.send_message(message.from_user.id, passport_kg_idpAfter18Change_tmp, parse_mode=types.ParseMode.HTML)
+
+async def passport_ru_idpAfter18Change_cmd(message : types.Message):
+    await bot.send_message(message.from_user.id, passport_ru_idpAfter18Change_tmp, parse_mode=types.ParseMode.HTML)
+
+
+
 
 
 
@@ -117,16 +165,16 @@ async def svr_ru_cmd(message : types.Message):
     await bot.send_message(message.from_user.id, 'Выберите нужный вариант', reply_markup=kb_ru_svr)
 
 async def svrBefore18_kg_cmd(message : types.Message):
-    await bot.send_message(message.from_user.id, svrBefore_kg_tmp)
+    await bot.send_message(message.from_user.id, svrBefore18_kg_tmp, parse_mode=types.ParseMode.HTML)
 
 async def svrBefore18_ru_cmd(message : types.Message):
-    await bot.send_message(message.from_user.id, svrBefore_ru_tmp)
+    await bot.send_message(message.from_user.id, svrBefore18_ru_tmp, parse_mode=types.ParseMode.HTML)
 
 async def svrAfter18_kg_cmd(message : types.Message):
-    await bot.send_message(message.from_user.id, svrAfter18_kg_tmp)
+    await bot.send_message(message.from_user.id, svrAfter18_kg_tmp, parse_mode=types.ParseMode.HTML)
 
 async def svrAfter18_ru_cmd(message : types.Message):
-    await bot.send_message(message.from_user.id, svrAfter18_ru_tmp)
+    await bot.send_message(message.from_user.id, svrAfter18_ru_tmp, parse_mode=types.ParseMode.HTML)
 
 
 # Хэндлеры для импорта------------------------------------------------------------------------------------
@@ -142,30 +190,53 @@ def register_handlers_client(dp : Dispatcher):
     dp.register_message_handler(consulate_open_ru_cmd, commands=['Адрес_и_график_работы'])
     dp.register_message_handler(consulate_open_kg_cmd, commands=['Дареги_жана_иш_тартиби'])
 
+# Паспорт--------------------------------------------------------------------
     dp.register_message_handler(passport_kg_cmd, commands=['Паспорт_алуу'])
     dp.register_message_handler(passport_ru_cmd, commands=['Получение_паспорта'])
 
+# ОГП
     dp.register_message_handler(passport_kg_ogp_cmd, commands=['Жалпы_жарандык_паспорт'])
     dp.register_message_handler(passport_ru_ogp_cmd, commands=['Общегражданский_паспорт(Загран_паспорт)'])
 
     dp.register_message_handler(passport_kg_ogpBefore18_cmd, commands=['18-жашка_чейинки_өспүрүмдөргө'])
-    dp.register_message_handler(passport_ru_ogpBefore18_cmd, commands=['Для_получения_ОГП_гражданам_до_18_лет'])
+    dp.register_message_handler(passport_ru_ogpBefore18_cmd, commands=['ОГП_гражданам_до_18_лет'])
 
     dp.register_message_handler(passport_kg_ogpAfter18_cmd, commands=['18-жашка_толгон_жарандарга'])
-    dp.register_message_handler(passport_ru_ogpAfter18_cmd, commands=['Для_получения_ОГП_гражданам_старше_18_лет'])
+    dp.register_message_handler(passport_ru_ogpAfter18_cmd, commands=['ОГП_гражданам_старше_18_лет'])
 
-    dp.register_message_handler(passport_kg_idp_cmd, commands=['Идентификациялык_карта(ID-паспорт)'])
-    dp.register_message_handler(passport_ru_idp_cmd, commands=['Идентификационный_паспорт_(ID)'])
+    dp.register_message_handler(passport_kg_ogpAfter18Tern_cmd, commands=['паспорттун_мөөнөтү_өтүп(бузулуп)_калган'])
+    dp.register_message_handler(passport_ru_ogpAfter18Tern_cmd, commands=['истечение_срока_действия(порча)_паспорта'])
 
-    dp.register_message_handler(passport_kg_idpBefore18_cmd, commands=['18-жашка_чыга_элек_жаранга_ID-паспорт_алуу'])
-    dp.register_message_handler(passport_ru_idpBefore18_cmd, commands=['Для_получения_ID_паспорта_гражданам_до_18_лет'])
+    dp.register_message_handler(passport_kg_ogpAfter18Loss_cmd, commands=['паспортту_жоготуп(уурдатып)_алган_учурларда'])
+    dp.register_message_handler(passport_ru_ogpAfter18Loss_cmd, commands=['утеря(кража)_паспорта'])
 
-    dp.register_message_handler(passport_kg_idpAfter18_cmd, commands=['18-жашка_чыккан_жарандарга_ID-паспорт_алуу'])
-    dp.register_message_handler(passport_ru_idpAfter18_cmd, commands=['Для_получения_ID_паспорта_гражданам_старше_18_лет'])
+    dp.register_message_handler(passport_kg_ogpAfter18Change, commands=['өздүк_маалыматтарын_өзгөрткөн_учурунда(ОГП)'])
+    dp.register_message_handler(passport_ru_ogpAfter18Change, commands=['изменение_персональных_данных(ОГП)'])
 
+# ID паспорт
+    dp.register_message_handler(passport_kg_idp_cmd, commands=['Идентификациялык_карта(ID)'])
+    dp.register_message_handler(passport_ru_idp_cmd, commands=['Идентификационная_карта_(ID)'])
+
+    dp.register_message_handler(passport_kg_idpBefore18_cmd, commands=['18-жашка_чыга_элек_жаранга_ID-карта'])
+    dp.register_message_handler(passport_ru_idpBefore18_cmd, commands=['ID_карта_гражданам_до_18_лет'])
+
+    dp.register_message_handler(passport_kg_idpAfter18_cmd, commands=['18-жашка_чыккан_жарандарга_ID-карта'])
+    dp.register_message_handler(passport_ru_idpAfter18_cmd, commands=['ID_карта_гражданам_старше_18_лет'])
+
+    dp.register_message_handler(passport_kg_idpAfter18Tern_cmd, commands=['ID-картанын_мөөнөтү_өтүп(бузулуп)_калган'])
+    dp.register_message_handler(passport_ru_idpAfter18Tern_cmd, commands=['истечение_срока_действия(порча)_ID-карты'])
+
+    dp.register_message_handler(passport_kg_idpAfter18Loss_cmd, commands=['ID-картаны_жоготуп(уурдатып)_алган_учурларда'])
+    dp.register_message_handler(passport_ru_idpAfter18Loss_cmd, commands=['утеря(кража)_ID-карты'])
+
+    dp.register_message_handler(passport_kg_idpAfter18Change_cmd, commands=['өздүк_маалыматтарын_өзгөрткөн_учурунда(ID)'])
+    dp.register_message_handler(passport_ru_idpAfter18Change_cmd, commands=['изменение_персональных_данных(ID)'])
+
+# Электронная очередь-------------------------------------------------------------------------------
     dp.register_message_handler(preRegstration_kg_cmd, commands=['Электрондук_иретке_катталуу'])
     dp.register_message_handler(preRegstration_ru_cmd, commands=['Электронная_очередь'])
 
+# СВР----------------------------------------------------------------------------------
     dp.register_message_handler(svr_kg_cmd, commands=['Мекенге_кайтуу_күбөлүгү'])
     dp.register_message_handler(svr_ru_cmd, commands=['Свидетельство_на_возвращение_на_родину'])
 

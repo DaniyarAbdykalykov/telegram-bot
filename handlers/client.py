@@ -1,3 +1,4 @@
+from importlib.abc import PathEntryFinder
 from aiogram import Dispatcher, types
 from create_bot import dp, bot
 from keyboards import *
@@ -177,6 +178,82 @@ async def svrAfter18_ru_cmd(message : types.Message):
     await bot.send_message(message.from_user.id, svrAfter18_ru_tmp, parse_mode=types.ParseMode.HTML)
 
 
+
+# Истребование--------------------------------------------------------------------------------------------
+async def reclamation_kg_cmd(message : types.Message):
+    await bot.send_message(message.from_user.id, reclamation_kg_tmp, reply_markup=kb_kg_reclamation, parse_mode=types.ParseMode.HTML)
+
+async def reclamation_ru_cmd(message : types.Message):
+    await bot.send_message(message.from_user.id, reclamation_ru_tmp, reply_markup=kb_ru_reclamation, parse_mode=types.ParseMode.HTML)
+
+
+async def reclamationCrimRec_kg_cmd(message : types.Message):
+    await bot.send_message(message.from_user.id, reclamationCrimRec_kg_tmp, parse_mode=types.ParseMode.HTML)
+
+async def reclamationCrimRec_ru_cmd(message : types.Message):
+    await bot.send_message(message.from_user.id, reclamationCrimRec_ru_tmp, parse_mode=types.ParseMode.HTML)
+
+
+async def reclamationAuthDL_kg_cmd(message : types.Message):
+    await bot.send_message(message.from_user.id, reclamationAuthDL_kg_tmp, parse_mode=types.ParseMode.HTML)
+
+async def reclamationAuthDL_ru_cmd(message : types.Message):
+    await bot.send_message(message.from_user.id, reclamationAuthDL_ru_tmp, parse_mode=types.ParseMode.HTML)
+
+
+async def reclamationMarriage_kg_cmd(message : types.Message):
+    await bot.send_message(message.from_user.id, reclamationMarriage_kg_tmp, parse_mode=types.ParseMode.HTML)
+
+async def reclamationMarriage_ru_cmd(message : types.Message):
+    await bot.send_message(message.from_user.id, reclamationMarriage_ru_tmp, parse_mode=types.ParseMode.HTML)
+
+
+
+# Вопросы ЗАГС
+async def issuesMar_kg_cmd(message : types.Message):
+    await bot.send_message(message.from_user.id, 'Ылайыктуу себебин тандаңыз', reply_markup=kb_kg_issuesMar)
+
+async def issuesMar_ru_cmd(message : types.Message):
+    await bot.send_message(message.from_user.id, 'Выберите нужный вариант', reply_markup=kb_ru_issuesMar)
+
+async def issuesMarRegistration_kg_cmd(message : types.Message):
+    await bot.send_message(message.from_user.id, issuesMarRegistration_kg_tmp, parse_mode=types.ParseMode.HTML)
+
+async def issuesMarRegistration_ru_cmd(message : types.Message):
+    await bot.send_message(message.from_user.id, issuesMarRegistration_ru_tmp, parse_mode=types.ParseMode.HTML)
+
+async def issuesMarChild_kg_cmd(message : types.Message):
+    await bot.send_message(message.from_user.id, issuesMarChild_kg_tmp, parse_mode=types.ParseMode.HTML)
+
+async def issuesMarChild_ru_cmd(message : types.Message):
+    await bot.send_message(message.from_user.id, issuesMarChild_ru_tmp, parse_mode=types.ParseMode.HTML)
+
+
+
+# Нотариат
+async def notaries_kg_cmd(message : types.Message):
+    await bot.send_message(message.from_user.id, notaries_kg_tmp, parse_mode=types.ParseMode.HTML)
+
+async def notaries_ru_cmd(message : types.Message):
+    await bot.send_message(message.from_user.id, notaries_ru_tmp, parse_mode=types.ParseMode.HTML)
+
+
+# Юридическая помощь
+async def lawyesr_kg_cmd(message : types.Message):
+    await bot.send_message(message.from_user.id, lawyesr_kg_tmp, parse_mode=types.ParseMode.HTML)
+
+async def lawyesr_ru_cmd(message : types.Message):
+    await bot.send_message(message.from_user.id, lawyesr_ru_tmp, parse_mode=types.ParseMode.HTML)
+
+
+# Груз 200
+async def cargo200_kg_cmd(message : types.Message):
+    await bot.send_message(message.from_user.id, cargo200_kg_tmp, parse_mode=types.ParseMode.HTML)
+
+async def cargo200_ru_cmd(message : types.Message):
+    await bot.send_message(message.from_user.id, cargo200_ru_tmp, parse_mode=types.ParseMode.HTML)
+
+
 # Хэндлеры для импорта------------------------------------------------------------------------------------
 def register_handlers_client(dp : Dispatcher):
     dp.register_message_handler(command_start, commands=['start', 'help'])
@@ -204,14 +281,14 @@ def register_handlers_client(dp : Dispatcher):
     dp.register_message_handler(passport_kg_ogpAfter18_cmd, commands=['18-жашка_толгон_жарандарга'])
     dp.register_message_handler(passport_ru_ogpAfter18_cmd, commands=['ОГП_гражданам_старше_18_лет'])
 
-    dp.register_message_handler(passport_kg_ogpAfter18Tern_cmd, commands=['паспорттун_мөөнөтү_өтүп(бузулуп)_калган'])
-    dp.register_message_handler(passport_ru_ogpAfter18Tern_cmd, commands=['истечение_срока_действия(порча)_паспорта'])
+    dp.register_message_handler(passport_kg_ogpAfter18Tern_cmd, commands=['Паспорттун_мөөнөтү_өтүп(бузулуп)_калган'])
+    dp.register_message_handler(passport_ru_ogpAfter18Tern_cmd, commands=['Истечение_срока_действия(порча)_паспорта'])
 
-    dp.register_message_handler(passport_kg_ogpAfter18Loss_cmd, commands=['паспортту_жоготуп(уурдатып)_алган_учурларда'])
-    dp.register_message_handler(passport_ru_ogpAfter18Loss_cmd, commands=['утеря(кража)_паспорта'])
+    dp.register_message_handler(passport_kg_ogpAfter18Loss_cmd, commands=['Паспортту_жоготуп(уурдатып)_алган_учурларда'])
+    dp.register_message_handler(passport_ru_ogpAfter18Loss_cmd, commands=['Утеря(кража)_паспорта'])
 
-    dp.register_message_handler(passport_kg_ogpAfter18Change, commands=['өздүк_маалыматтарын_өзгөрткөн_учурунда(ОГП)'])
-    dp.register_message_handler(passport_ru_ogpAfter18Change, commands=['изменение_персональных_данных(ОГП)'])
+    dp.register_message_handler(passport_kg_ogpAfter18Change, commands=['Өздүк_маалыматтарын_өзгөрткөн_учурунда(ОГП)'])
+    dp.register_message_handler(passport_ru_ogpAfter18Change, commands=['Изменение_персональных_данных(ОГП)'])
 
 # ID паспорт
     dp.register_message_handler(passport_kg_idp_cmd, commands=['Идентификациялык_карта(ID)'])
@@ -227,10 +304,10 @@ def register_handlers_client(dp : Dispatcher):
     dp.register_message_handler(passport_ru_idpAfter18Tern_cmd, commands=['истечение_срока_действия(порча)_ID-карты'])
 
     dp.register_message_handler(passport_kg_idpAfter18Loss_cmd, commands=['ID-картаны_жоготуп(уурдатып)_алган_учурларда'])
-    dp.register_message_handler(passport_ru_idpAfter18Loss_cmd, commands=['утеря(кража)_ID-карты'])
+    dp.register_message_handler(passport_ru_idpAfter18Loss_cmd, commands=['Утеря(кража)_ID-карты'])
 
-    dp.register_message_handler(passport_kg_idpAfter18Change_cmd, commands=['өздүк_маалыматтарын_өзгөрткөн_учурунда(ID)'])
-    dp.register_message_handler(passport_ru_idpAfter18Change_cmd, commands=['изменение_персональных_данных(ID)'])
+    dp.register_message_handler(passport_kg_idpAfter18Change_cmd, commands=['Өздүк_маалыматтарын_өзгөрткөн_учурунда(ID)'])
+    dp.register_message_handler(passport_ru_idpAfter18Change_cmd, commands=['Изменение_персональных_данных(ID)'])
 
 # Электронная очередь-------------------------------------------------------------------------------
     dp.register_message_handler(preRegstration_kg_cmd, commands=['Электрондук_иретке_катталуу'])
@@ -245,4 +322,38 @@ def register_handlers_client(dp : Dispatcher):
 
     dp.register_message_handler(svrAfter18_kg_cmd, commands=['18-жаштан_өйдө_жарандарга_СВР_алуу'])
     dp.register_message_handler(svrAfter18_ru_cmd, commands=['Получение_СВР_старше_18-лет_(при_утере_документов)'])
+
+# Истребование---------------------------------------------------------------------------------------------
+    dp.register_message_handler(reclamation_kg_cmd, commands=['Документтерди_суратуу'])
+    dp.register_message_handler(reclamation_ru_cmd, commands=['Истребование_документов'])
+
+    dp.register_message_handler(reclamationCrimRec_kg_cmd, commands=['Кыргызстанда_соттолгон_эмес_деген_маалымдама'])
+    dp.register_message_handler(reclamationCrimRec_ru_cmd, commands=['Справка_об_отсутствии_судимости_в_КР'])
+
+    dp.register_message_handler(reclamationAuthDL_kg_cmd, commands=['Айдоочулук_күбөлүгүнүн_түп_нускасы'])
+    dp.register_message_handler(reclamationAuthDL_ru_cmd, commands=['Подтверждение_подлинности_ВУ'])
+
+    dp.register_message_handler(reclamationMarriage_kg_cmd, commands=['Нике_тууралуу_күбөлүк'])
+    dp.register_message_handler(reclamationMarriage_ru_cmd, commands=['Справка_о_семейном_положении'])
+
+# Вопросы ЗАГС-----------------------------------------------------------------------------------------
+    dp.register_message_handler(issuesMar_kg_cmd, commands=['ЗАГС_маселелери'])
+    dp.register_message_handler(issuesMar_ru_cmd, commands=['Вопросы_ЗАГС'])
+
+    dp.register_message_handler(issuesMarRegistration_kg_cmd, commands=['КРнын_нике_күбөлүгүн_берүү_жана_никени_каттоо'])
+    dp.register_message_handler(issuesMarRegistration_ru_cmd, commands=['Регистрация_брака_и_выдача_свидетельства_о_заключении_брака_КР'])
+
+    dp.register_message_handler(issuesMarChild_kg_cmd, commands=['Баланын_туулгандыгын_каттоо_жана_КРнын_туулгандыгы_тууралуу_күбөлүгүн_берүү'])
+    dp.register_message_handler(issuesMarChild_ru_cmd, commands=['Регистрация_рождения_ребенка_и_выдача_свидетельства_о_рождении_КР'])
+
+    dp.register_message_handler(notaries_kg_cmd, commands=['Нотариат_маселелери'])
+    dp.register_message_handler(notaries_ru_cmd, commands=['Вопросы_нотариата'])
+
+# Юридическая помощь----------------------------------------------------------------------------------
+    dp.register_message_handler(lawyesr_kg_cmd, commands=['Юридикалык_жардам'])
+    dp.register_message_handler(lawyesr_ru_cmd, commands=['Юридическая_помощь'])
+
+# Груз 200
+    dp.register_message_handler(cargo200_kg_cmd, commands=['Жүк-200'])
+    dp.register_message_handler(cargo200_ru_cmd, commands=['Груз-200'])
 

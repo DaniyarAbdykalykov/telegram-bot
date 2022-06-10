@@ -10,11 +10,11 @@ async def command_start(message : types.Message):
     try:
         await bot.send_message(message.from_user.id, 'Саламатсызбы! Сиз менен Кыргыз Республикасынын Россия \
         Федерациясындагы Элчилигинин электрондук консулу байланышта. Керектүү тилди тандаңыз\n\n\
-Вас приветствует электронный консул Посольства Кыргызской Республики в Российской Федерации! \
+Здравствуйте! Вас приветствует робот-консультант Посольства Кыргызской Республики в Российской Федерации! \
 Выберите нужный язык обслуживания', reply_markup=kb_language)
         await message.delete()
     except:
-        await message.reply('Общение с ботом через ЛС, напишите ему: \nhttps://t.me/KyrgyzConsulate_ruBot')
+        await message.reply('Консультация с электронным консулом через ЛС, напишите ему: \nhttps://t.me/KyrgyzConsulate_ruBot')
 
 
 
@@ -148,12 +148,16 @@ async def passport_ru_idpAfter18Change_cmd(message : types.Message):
 
 # Водительское удостоверение
 async def driversLincense_kg_cmd(message : types.Message):
-    await bot.send_message(message.from_user.id, driversLincense_kg_tmp, parse_mode=types.ParseMode.HTML)
-    await message.reply(driversLincense_kg_tmp, parse_mode=types.ParseMode.HTML)
+    try:
+        await bot.send_message(message.from_user.id, driversLincense_kg_tmp, parse_mode=types.ParseMode.HTML)
+    except:
+        await message.reply(driversLincense_kg_tmp, parse_mode=types.ParseMode.HTML)
 
 async def driversLincense_ru_cmd(message : types.Message):
-    await bot.send_message(message.from_user.id, driversLincense_ru_tmp, parse_mode=types.ParseMode.HTML)
-    await message.reply(driversLincense_ru_tmp, parse_mode=types.ParseMode.HTML)
+    try:
+        await bot.send_message(message.from_user.id, driversLincense_ru_tmp, parse_mode=types.ParseMode.HTML)
+    except:
+        await message.reply(driversLincense_ru_tmp, parse_mode=types.ParseMode.HTML)
 
 
 
@@ -164,6 +168,13 @@ async def preRegstration_kg_cmd(message : types.Message):
 async def preRegstration_ru_cmd(message : types.Message):
     await bot.send_message(message.from_user.id, 'Для записи необходимо перейти по ссылке ниже:', reply_markup=urlKb_ru_preReg)
 
+
+# Контакты
+async def contacts_kg_cmd(message :types.Message):
+    await bot.send_message(message.from_user.id, contact_kg_tmp, parse_mode=types.ParseMode.HTML, reply_markup=urlKb_kg_contact)
+
+async def contacts_ru_cmd(message :types.Message):
+    await bot.send_message(message.from_user.id, contact_ru_tmp, parse_mode=types.ParseMode.HTML, reply_markup=urlKb_ru_contact)
 
 
 # Свидетельство о возвращении на Родину----------------------------------------------------------------------
@@ -281,10 +292,10 @@ def register_handlers_client(dp : Dispatcher):
 
 # Паспорт--------------------------------------------------------------------
     dp.register_message_handler(passport_kg_cmd, lambda message: 'паспорт' in message.text.lower()\
-        and 'алуу' in message.text.lower())
+        and 'тариздө' in message.text.lower())
 
     dp.register_message_handler(passport_ru_cmd, lambda message: 'паспорт' in message.text.lower()\
-        and 'получ' in message.text.lower())
+        and 'оформлен' in message.text.lower())
 
 # ОГП
     dp.register_message_handler(passport_kg_ogp_cmd, lambda message: 'жалпы жарандык' in message.text.lower()\
@@ -377,7 +388,7 @@ def register_handlers_client(dp : Dispatcher):
 
 # Водительское удостоверение
     dp.register_message_handler(driversLincense_kg_cmd, lambda message: 'айдоочу' in message.text.lower()\
-         and 'күбөлүк' in message.text.lower())
+         and 'күбөлү' in message.text.lower() and 'алмаштыр' in message.text.lower())
 
     dp.register_message_handler(driversLincense_ru_cmd, lambda message: 'водительское' in message.text.lower()\
          and 'удостоверение' in message.text.lower())
@@ -390,6 +401,16 @@ def register_handlers_client(dp : Dispatcher):
     dp.register_message_handler(preRegstration_ru_cmd, lambda message: 'электрон' in message.text.lower()\
         and 'очеред' in message.text.lower())
 
+
+# Контакты
+    dp.register_message_handler(contacts_kg_cmd, lambda message: 'байланыш' in message.text.lower()\
+        and 'маалыматы' in message.text.lower())
+
+    dp.register_message_handler(contacts_ru_cmd, lambda message: 'контакт' in message.text.lower()\
+        and 'информаци' in message.text.lower())
+
+
+
 # СВР----------------------------------------------------------------------------------
     dp.register_message_handler(svr_kg_cmd, lambda message: 'мекенге' in message.text.lower()\
         and 'кайт' in message.text.lower())
@@ -401,11 +422,11 @@ def register_handlers_client(dp : Dispatcher):
     dp.register_message_handler(svrBefore18_kg_cmd, lambda message: 'чейинки' in message.text.lower()\
         and 'свр' in message.text.lower())
 
-    dp.register_message_handler(svrBefore18_ru_cmd, lambda message: '18 летнего' in message.text.lower()\
+    dp.register_message_handler(svrBefore18_ru_cmd, lambda message: 'до 18' in message.text.lower()\
         and 'свр' in message.text.lower())
 
 
-    dp.register_message_handler(svrAfter18_kg_cmd, lambda message: 'жаштан' in message.text.lower()\
+    dp.register_message_handler(svrAfter18_kg_cmd, lambda message: 'ал' in message.text.lower()\
         and 'свр' in message.text.lower())
 
     dp.register_message_handler(svrAfter18_ru_cmd, lambda message: 'получ' in message.text.lower()\
@@ -419,22 +440,22 @@ def register_handlers_client(dp : Dispatcher):
         and 'документ' in message.text.lower())
 
 
-    dp.register_message_handler(reclamationCrimRec_kg_cmd, lambda message: 'соттолгон' in message.text.lower()\
-        and 'эмес' in message.text.lower() and 'маалымдама' in message.text.lower())
+    dp.register_message_handler(reclamationCrimRec_kg_cmd, lambda message: 'соттолбогон' in message.text.lower()\
+        and 'маалымкат')
 
     dp.register_message_handler(reclamationCrimRec_ru_cmd, lambda message: 'справка' in message.text.lower()\
         and 'отсутств' in message.text.lower() and 'судимост' in message.text.lower())
 
 
     dp.register_message_handler(reclamationAuthDL_kg_cmd, lambda message: 'айдоочу' in message.text.lower()\
-        and 'күбөлүг' in message.text.lower() and 'нускасы' in message.text.lower())
+        and 'күбөлү' in message.text.lower() and 'маалымкат' in message.text.lower())
 
-    dp.register_message_handler(reclamationAuthDL_ru_cmd, lambda message: 'подтверждение' in message.text.lower()\
-        and 'подлинности' in message.text.lower() and 'ву' in message.text.lower())
+    dp.register_message_handler(reclamationAuthDL_ru_cmd, lambda message: 'подтвержден' in message.text.lower()\
+        and 'подлинност' in message.text.lower() and 'ву' in message.text.lower())
 
 
     dp.register_message_handler(reclamationMarriage_kg_cmd, lambda message: 'нике' in message.text.lower()\
-        and 'тууралуу' in message.text.lower() and 'күбөлүк' in message.text.lower())
+        and 'жөнүндө' in message.text.lower() and 'маалымкат' in message.text.lower())
 
     dp.register_message_handler(reclamationMarriage_ru_cmd, lambda message: 'справка' in message.text.lower()\
         and 'семейн' in message.text.lower() and 'положен' in message.text.lower())

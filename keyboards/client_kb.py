@@ -13,11 +13,11 @@ btn_ru_mainMenu = KeyboardButton('Главное меню')
 btn_kg_schedule = KeyboardButton('Дареги жана иш тартиби')
 btn_ru_schedule = KeyboardButton('Адрес и график работы')
 
-btn_kg_passport = KeyboardButton('Паспорт алуу')
-btn_ru_passport = KeyboardButton('Получение паспорта')
+btn_kg_passport = KeyboardButton('Паспортту тариздөө')
+btn_ru_passport = KeyboardButton('Оформление паспорта')
 
-btn_kg_ogp = KeyboardButton('Жалпы жарандык паспорт')
-btn_ru_ogp = KeyboardButton('Общегражданский паспорт')
+btn_kg_ogp = KeyboardButton('Жалпы жарандык паспорт (Загранпаспорт)')
+btn_ru_ogp = KeyboardButton('Общегражданский паспорт (Загранпаспорт)')
 
 btn_kg_ogpBefore18 = KeyboardButton('18 жашка чейинки өспүрүмдөргө')
 btn_ru_ogpBefore18 = KeyboardButton('ОГП гражданам до 18 лет')
@@ -34,52 +34,52 @@ btn_ru_ogpAfter18Loss = KeyboardButton('Утеря (кража) паспорта
 btn_kg_ogpAfter18Change = KeyboardButton('Өздүк маалыматтарын өзгөрткөн учурунда (ОГП)')
 btn_ru_ogpAfter18Change = KeyboardButton('Изменение персональных данных (ОГП)')
 
-btn_kg_idpasport = KeyboardButton('Идентификациялык карта (ID)')
-btn_ru_idpasport = KeyboardButton('Идентификационная карта (ID)')
+btn_kg_idpasport = KeyboardButton('Идентификациялык карта (ID-карта)')
+btn_ru_idpasport = KeyboardButton('Идентификационная карта (ID-карта)')
 
-btn_kg_idpBefore18 = KeyboardButton('18 жашка чыга элек жаранга ID карта')
-btn_ru_idpBefore18 = KeyboardButton('ID карта гражданам до 18 лет')
+btn_kg_idpBefore18 = KeyboardButton('18 жашка чыга элек жаранга ID-карта')
+btn_ru_idpBefore18 = KeyboardButton('ID-карта гражданам до 18 лет')
 
-btn_kg_idpAfter18 = KeyboardButton('18 жашка чыккан жарандарга ID карта')
-btn_ru_idpAfter18 = KeyboardButton('ID карта гражданам старше 18 лет')
+btn_kg_idpAfter18 = KeyboardButton('18 жашка чыккан жарандарга ID-карта')
+btn_ru_idpAfter18 = KeyboardButton('ID-карта гражданам старше 18 лет')
 
-btn_kg_idpAfter18Tern = KeyboardButton('ID картанын мөөнөтү өтүп (бузулуп) калган')
-btn_ru_idpAfter18Tern = KeyboardButton('Истечение срока действия (порча) ID карты')
+btn_kg_idpAfter18Tern = KeyboardButton('ID-картанын мөөнөтү өтүп (бузулуп) калган')
+btn_ru_idpAfter18Tern = KeyboardButton('Истечение срока действия (порча) ID-карты')
 
 btn_kg_idpAfter18Loss = KeyboardButton('ID картаны жоготуп (уурдатып) алган учурларда')
-btn_ru_idpAfter18Loss = KeyboardButton('Утеря (кража) ID карты')
+btn_ru_idpAfter18Loss = KeyboardButton('Утеря (кража) ID-карты')
 
 btn_kg_idpAfter18Change = KeyboardButton('Өздүк маалыматтарын өзгөрткөн учурунда (ID)')
 btn_ru_idpAfter18Change = KeyboardButton('Изменение персональных данных (ID)')
 
 
 # Свидетельство о возвращении на Родину (СВР)
-btn_kg_svr = KeyboardButton('Мекенге кайтуу күбөлүгү')
+btn_kg_svr = KeyboardButton('Мекенге кайтуу күбөлүгүн алуу')
 btn_ru_svr = KeyboardButton('Свидетельство на возвращение на родину')
 
 btn_kg_svrBefore18 = KeyboardButton('18 жашка чейинки балдарга СВР алуу')
-btn_ru_svrBefore18 = KeyboardButton('Получение СВР до 18 летнего возраста')
+btn_ru_svrBefore18 = KeyboardButton('Получение СВР для лиц до 18 лет')
 
 btn_kg_svrAfter18 = KeyboardButton('18 жаштан өйдө жарандарга СВР алуу')
-btn_ru_svrAfter18 = KeyboardButton('Получение СВР старше 18 лет (при утере документов)')
+btn_ru_svrAfter18 = KeyboardButton('Получение СВР для лиц, старше 18 лет')
 
 
 # Водительское удостоверение
-btn_kg_driversLincense = KeyboardButton('Айдоочу күбөлүк')
+btn_kg_driversLincense = KeyboardButton('Айдоочулук күбөлүгүн алмаштыруу')
 btn_ru_driversLincense = KeyboardButton('Водительское удостоверение')
 
 
 # Истребование
-btn_kg_reclamation = KeyboardButton('Документтерди суратуу')
+btn_kg_reclamation = KeyboardButton('Документтерди суратып алдыруу')
 btn_ru_reclamation = KeyboardButton('Истребование документов')
 
-btn_kg_reclamationCrimRec = KeyboardButton('Кыргызстанда соттолгон эмес деген маалымдама')
+btn_kg_reclamationCrimRec = KeyboardButton('КРнын аймагында соттолбогондугу жөнүндө маалымкат')
 btn_ru_reclamationCrimRec = KeyboardButton('Справка об отсутствии судимости в КР')
 
-btn_kg_reclamationAuthDL = KeyboardButton('Айдоочулук күбөлүгүнүн түп нускасы')
-btn_ru_reclamationAuthDL = KeyboardButton('Подтверждение подлинности ВУ')
+btn_kg_reclamationAuthDL = KeyboardButton('Айдоочулук күбөлүктүн аныктыгын тастыктаган маалымкат')
+btn_ru_reclamationAuthDL = KeyboardButton('Справка о подтверждении подлинности ВУ')
 
-btn_kg_reclamationMarriage = KeyboardButton('Нике тууралуу күбөлүк')
+btn_kg_reclamationMarriage = KeyboardButton('Никелешуу укугу жөнүндө маалымкат')
 btn_ru_reclamationMarriage = KeyboardButton('Справка о семейном положении')
 
 
@@ -87,11 +87,11 @@ btn_ru_reclamationMarriage = KeyboardButton('Справка о семейном 
 btn_kg_issuesMar = KeyboardButton('ЗАГС маселелери')
 btn_ru_issuesMar = KeyboardButton('Вопросы ЗАГС')
 
-btn_kg_issuesMarRegistration = KeyboardButton('КРнын нике күбөлүгүн берүү жана никени каттоо')
-btn_ru_issuesMarRegistration = KeyboardButton('Регистрация брака и выдача свидетельства о заключении брака КР')
+btn_kg_issuesMarRegistration = KeyboardButton('Никелешүүнү мамлекеттик каттоо')
+btn_ru_issuesMarRegistration = KeyboardButton('Регистрация брака и получение свидетельства о заключении брака КР')
 
 btn_kg_issuesMarChild = KeyboardButton('Баланын туулгандыгын каттоо жана КРнын туулгандыгы тууралуу күбөлүгүн берүү')
-btn_ru_issuesMarChild = KeyboardButton('Регистрация рождения ребенка и выдача свидетельства о рождении КР')
+btn_ru_issuesMarChild = KeyboardButton('Регистрация рождения ребенка и получение свидетельства о рождении КР')
 
 
 # Нотариат
@@ -125,8 +125,22 @@ urlKb_ru_preReg.add(urlBtn_ru_preReg)
 
 
 # Соцсети
+btn_kg_contacts = KeyboardButton('Байланыш маалыматы')
+btn_ru_contacts = KeyboardButton('Контактная информация')
+
+urlBtn_kg_contactSite = InlineKeyboardButton(text='Элчиликтин расмий сайты', url='https://mfa.gov.kg/kg/dm/posolstvo-kyrgyzskoy-respubliki-v-rossiyskoy-federacii')
+urlBtn_ru_contactSite = InlineKeyboardButton(text='Официальный сайт Посольства', url='https://mfa.gov.kg/ru/dm/posolstvo-kyrgyzskoy-respubliki-v-rossiyskoy-federacii')
 
 
+urlBtn_contactInst = InlineKeyboardButton(text='Instagram', url='https://www.instagram.com/invites/contact/?i=vc9nup8rpkcf&utm_content=miojb3c')
+urlBtn_contactFb = InlineKeyboardButton(text='Facebook', url='https://www.facebook.com/kg.consul.ru')
+
+
+urlKb_kg_contact = InlineKeyboardMarkup(row_width=1)
+urlKb_kg_contact.add(urlBtn_kg_contactSite).row(urlBtn_contactInst, urlBtn_contactFb)
+
+urlKb_ru_contact = InlineKeyboardMarkup(row_width=1)
+urlKb_ru_contact.add(urlBtn_ru_contactSite).row(urlBtn_contactInst, urlBtn_contactFb)
 
 # b4 = KeyboardButton('Поделиться номером', request_contact=True) 
 # b5 = KeyboardButton('Отправить где я', request_location=True)
@@ -205,12 +219,12 @@ kb_ru_issuesMar.add(btn_ru_issuesMarRegistration).add(btn_ru_issuesMarChild).add
 
 # Главное меню
 kb_main_kg_menu = ReplyKeyboardMarkup(resize_keyboard=True)
-kb_main_kg_menu.add(btn_kg_schedule).row(btn_kg_preReg, btn_kg_passport).add(btn_kg_driversLincense).add(btn_kg_svr).add(btn_kg_reclamation)\
+kb_main_kg_menu.row(btn_kg_schedule, btn_kg_contacts).row(btn_kg_preReg, btn_kg_passport).add(btn_kg_driversLincense).add(btn_kg_svr).add(btn_kg_reclamation)\
 .row(btn_kg_issuesMar, btn_kg_notaries).row(btn_kg_lawyesr, btn_kg_cargo200)
 
 
 kb_main_ru_menu = ReplyKeyboardMarkup(resize_keyboard=True)
-kb_main_ru_menu.add(btn_ru_schedule).row(btn_ru_preReg, btn_ru_passport).add(btn_ru_driversLincense).add(btn_ru_svr).add(btn_ru_reclamation).\
+kb_main_ru_menu.row(btn_ru_schedule, btn_ru_contacts).row(btn_ru_preReg, btn_ru_passport).add(btn_ru_driversLincense).add(btn_ru_svr).add(btn_ru_reclamation).\
 row(btn_ru_issuesMar, btn_ru_notaries).row(btn_ru_lawyesr, btn_ru_cargo200)
 
 

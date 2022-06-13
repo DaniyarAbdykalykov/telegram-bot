@@ -8,13 +8,13 @@ from service_templates import *
 # Приветствие------------------------------------------------------------------------------------
 async def command_start(message : types.Message):
     try:
-        await bot.send_message(message.from_user.id, 'Саламатсызбы! Сиз менен Кыргыз Республикасынын Россия \
-        Федерациясындагы Элчилигинин электрондук консулу байланышта. Керектүү тилди тандаңыз\n\n\
-Здравствуйте! Вас приветствует робот-консультант Посольства Кыргызской Республики в Российской Федерации! \
-Выберите нужный язык обслуживания', reply_markup=kb_language)
+        await bot.send_message(message.from_user.id, 'Саламатсызбы! Сиз менен <b>Кыргыз Республикасынын Россия \
+        Федерациясындагы Элчилигинин робот-консультанты</b> байланышта. Керектүү тилди тандаңыз\n\n\
+Здравствуйте! Вас приветствует <b>робот-консультант Посольства Кыргызской Республики в Российской Федерации!</b> \
+Выберите нужный язык обслуживания', reply_markup=kb_language, parse_mode=types.ParseMode.HTML)
         await message.delete()
     except:
-        await message.reply('Консультация с электронным консулом через ЛС, напишите ему: \nhttps://t.me/KyrgyzConsulate_ruBot')
+        await message.reply('Консультация с ботом Посольства через ЛС, напишите ему: \nhttps://t.me/KyrgyzConsulate_ruBot')
 
 
 
@@ -295,7 +295,7 @@ def register_handlers_client(dp : Dispatcher):
         and 'тариздө' in message.text.lower())
 
     dp.register_message_handler(passport_ru_cmd, lambda message: 'паспорт' in message.text.lower()\
-        and 'оформлен' in message.text.lower())
+        and 'оформ' in message.text.lower())
 
 # ОГП
     dp.register_message_handler(passport_kg_ogp_cmd, lambda message: 'жалпы жарандык' in message.text.lower()\

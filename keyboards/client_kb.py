@@ -134,14 +134,17 @@ urlBtn_ru_contactSite = InlineKeyboardButton(text='Официальный сай
 
 urlBtn_contactInst = InlineKeyboardButton(text='Instagram', url='https://www.instagram.com/invites/contact/?i=vc9nup8rpkcf&utm_content=miojb3c')
 urlBtn_contactFb = InlineKeyboardButton(text='Facebook', url='https://www.facebook.com/kg.consul.ru')
-
+urlBtn_contactTelegram = InlineKeyboardButton(text='Telegram канал', url='https://t.me/kg_consul')
+urlBtn_contactBot = InlineKeyboardButton(text='Робот-консультант', url='https://t.me/kg_consulBot')
 
 urlKb_kg_contact = InlineKeyboardMarkup(row_width=1)
-urlKb_kg_contact.add(urlBtn_kg_contactSite).row(urlBtn_contactInst, urlBtn_contactFb)
+urlKb_kg_contact.add(urlBtn_kg_contactSite).row(urlBtn_contactInst, urlBtn_contactFb).add(urlBtn_contactTelegram)
 
 urlKb_ru_contact = InlineKeyboardMarkup(row_width=1)
-urlKb_ru_contact.add(urlBtn_ru_contactSite).row(urlBtn_contactInst, urlBtn_contactFb)
+urlKb_ru_contact.add(urlBtn_ru_contactSite).row(urlBtn_contactInst, urlBtn_contactFb).add(urlBtn_contactTelegram)
 
+urlKb_contactBot = InlineKeyboardMarkup(row_width=1)
+urlKb_contactBot.add(urlBtn_contactBot)
 # b4 = KeyboardButton('Поделиться номером', request_contact=True) 
 # b5 = KeyboardButton('Отправить где я', request_location=True)
 

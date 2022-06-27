@@ -58,14 +58,14 @@ async def consulate_open_kg_cmd(message : types.Message):
 # Паспорт------------------------------------------------------------------------------------
 async def passport_kg_cmd(message : types.Message):
     try:
-        await bot.send_message(message.from_user.id, 'Ылайыктуу себебин тандаңыз', reply_markup=kb_passport_kg)
+        await bot.send_message(message.from_user.id, passport_kg_tmp, parse_mode=types.ParseMode.HTML, reply_markup=kb_passport_kg)
     except:
         await message.reply(moreInfortation_kg, reply_markup=urlKb_contactBot)
 
 
 async def passport_ru_cmd(message : types.Message):
     try:
-        await bot.send_message(message.from_user.id, 'Выберите нужный вариант', reply_markup=kb_passport_ru)
+        await bot.send_message(message.from_user.id, passport_ru_tmp, parse_mode=types.ParseMode.HTML, reply_markup=kb_passport_ru)
     except:
         await message.reply(moreInfortation_ru, reply_markup=urlKb_contactBot)
 
@@ -543,6 +543,8 @@ def register_handlers_client(dp : Dispatcher):
     dp.register_message_handler(passport_kg_ogpAfter18Loss_cmd, lambda message:
         'паспорт' in message.text.lower() and 'жого' in message.text.lower()
         or 'уурда' in message.text.lower() and 'паспорт' in message.text.lower()
+        or 'жого' in message.text.lower() and 'паспурт' in message.text.lower()
+        or 'жого' in message.text.lower() and 'поспорт' in message.text.lower()    
     )
   
     dp.register_message_handler(passport_ru_ogpAfter18Loss_cmd, lambda message:
@@ -713,11 +715,15 @@ def register_handlers_client(dp : Dispatcher):
 
 
     dp.register_message_handler(reclamationCrimRec_kg_cmd, lambda message:
-        'соттолбогон' in message.text.lower() and 'маалымкат'
+        'сотто' in message.text.lower() and 'маалымкат'
+        or 'сотто' in message.text.lower() and 'справка'    
+        or 'сотто' in message.text.lower() and 'кагаз'
     )
 
     dp.register_message_handler(reclamationCrimRec_ru_cmd, lambda message:
-        'справка' in message.text.lower() and 'отсутств' in message.text.lower() and 'судимост' in message.text.lower()
+        'справк' in message.text.lower() and 'отсутств' in message.text.lower() and 'судимост' in message.text.lower()
+        or 'справк' in message.text.lower() and 'несуд' in message.text.lower()
+        or 'справк' in message.text.lower() and 'судим'   
     )
 
 
@@ -786,6 +792,7 @@ def register_handlers_client(dp : Dispatcher):
    
     dp.register_message_handler(lawyesr_ru_cmd, lambda message:
         'юрид' in message.text.lower() and 'помощь' in message.text.lower()
+        or 'юри' in message.text.lower() and 'консульт' in message.text.lower()    
     )
 
 # Груз 200

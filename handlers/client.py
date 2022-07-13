@@ -7,6 +7,7 @@ from create_bot import dp, bot
 from keyboards import *
 from aiogram.types import ReplyKeyboardRemove
 from service_templates import *
+from databases import recording_log
 
 
 # Приветствие------------------------------------------------------------------------------------
@@ -46,12 +47,16 @@ async def consulate_open_ru_cmd(message : types.Message):
         await bot.send_message(message.from_user.id, consulate_open_ru_tmp, parse_mode=types.ParseMode.HTML)
     except:
         await message.reply(consulate_open_ru_tmp, parse_mode=types.ParseMode.HTML)
+    finally:
+        await recording_log()        
 
 async def consulate_open_kg_cmd(message : types.Message):
     try:
         await bot.send_message(message.from_user.id, consulate_open_kg_tmp, parse_mode=types.ParseMode.HTML)
     except:
         await message.reply(consulate_open_kg_tmp, parse_mode=types.ParseMode.HTML)
+    finally:
+        await recording_log()        
 
 
 
@@ -61,14 +66,16 @@ async def passport_kg_cmd(message : types.Message):
         await bot.send_message(message.from_user.id, passport_kg_tmp, parse_mode=types.ParseMode.HTML, reply_markup=kb_passport_kg)
     except:
         await message.reply(moreInfortation_kg, reply_markup=urlKb_contactBot)
-
+    finally:
+        await recording_log()
 
 async def passport_ru_cmd(message : types.Message):
     try:
         await bot.send_message(message.from_user.id, passport_ru_tmp, parse_mode=types.ParseMode.HTML, reply_markup=kb_passport_ru)
     except:
         await message.reply(moreInfortation_ru, reply_markup=urlKb_contactBot)
-
+    finally:
+        await recording_log()
 
 
 # ОГП
@@ -77,13 +84,17 @@ async def passport_kg_ogp_cmd(message : types.Message):
         await bot.send_message(message.from_user.id, 'Ылайыктуу себебин тандаңыз', reply_markup=kb_kg_ogp)
     except:
         await message.reply(moreInfortation_kg, reply_markup=urlKb_contactBot)
+    finally:
+        await recording_log()
+
 
 async def passport_ru_ogp_cmd(message : types.Message):
     try:
         await bot.send_message(message.from_user.id, 'Выберите нужный вариант', reply_markup=kb_ru_ogp)
     except:
         await message.reply(moreInfortation_ru, reply_markup=urlKb_contactBot)
-
+    finally:
+        await recording_log()
 
 
 
@@ -92,12 +103,17 @@ async def passport_kg_ogpBefore18_cmd(message : types.Message):
         await bot.send_message(message.from_user.id, passport_kg_ogpBefore18_tmp, parse_mode=types.ParseMode.HTML)
     except:
         await message.reply(passport_kg_ogpBefore18_tmp, parse_mode=types.ParseMode.HTML)
+    finally:
+        await recording_log()
+
 
 async def passport_ru_ogpBefore18_cmd(message : types.Message):
     try:
         await bot.send_message(message.from_user.id, passport_ru_ogpBefore18_tmp, parse_mode=types.ParseMode.HTML)
     except:
         await message.reply(passport_ru_ogpBefore18_tmp, parse_mode=types.ParseMode.HTML)
+    finally:
+        await recording_log()
 
 
 
@@ -106,6 +122,8 @@ async def passport_kg_ogpAfter18_cmd(message : types.Message):
         await bot.send_message(message.from_user.id, 'Ылайыктуу себебин тандаңыз', reply_markup=kb_kg_ogpAfter18)
     except:
         await message.reply(moreInfortation_kg, reply_markup=urlKb_contactBot)
+    finally:
+        await recording_log()
 
 
 async def passport_ru_ogpAfter18_cmd(message : types.Message):
@@ -113,6 +131,8 @@ async def passport_ru_ogpAfter18_cmd(message : types.Message):
         await bot.send_message(message.from_user.id, 'Выберите нужный вариант', reply_markup=kb_ru_ogpAfter18)
     except:
         await message.reply(moreInfortation_ru, reply_markup=urlKb_contactBot)
+    finally:
+        await recording_log()
 
 
 
@@ -122,12 +142,16 @@ async def passport_kg_ogpAfter18Tern_cmd(message : types.Message):
         await bot.send_message(message.from_user.id, passport_kg_ogpAfter18Tern_tmp, parse_mode=types.ParseMode.HTML)
     except:
         await message.reply(passport_kg_ogpAfter18Tern_tmp, parse_mode=types.ParseMode.HTML)
+    finally:
+        await recording_log()
 
 async def passport_ru_ogpAfter18Tern_cmd(message : types.Message):
     try:
         await bot.send_message(message.from_user.id, passport_ru_ogpAfter18Tern_tmp, parse_mode=types.ParseMode.HTML)
     except:
         await message.reply(passport_ru_ogpAfter18Tern_tmp, parse_mode=types.ParseMode.HTML)
+    finally:
+        await recording_log()
 
 
 
@@ -136,12 +160,16 @@ async def passport_kg_ogpAfter18Loss_cmd(message : types.Message):
         await bot.send_message(message.from_user.id, passport_kg_ogpAfter18Loss_tmp, parse_mode=types.ParseMode.HTML)
     except:
         await message.reply(passport_kg_ogpAfter18Loss_tmp, parse_mode=types.ParseMode.HTML)
+    finally:
+        await recording_log()
 
 async def passport_ru_ogpAfter18Loss_cmd(message : types.Message):
     try:
         await bot.send_message(message.from_user.id, passport_ru_ogpAfter18Loss_tmp, parse_mode=types.ParseMode.HTML)
     except:
         await message.reply(passport_ru_ogpAfter18Loss_tmp, parse_mode=types.ParseMode.HTML)
+    finally:
+        await recording_log()
 
 
 
@@ -150,12 +178,17 @@ async def passport_kg_ogpAfter18Change(message : types.Message):
         await bot.send_message(message.from_user.id, passport_kg_ogpAfter18Change_tmp, parse_mode=types.ParseMode.HTML)
     except:
         await message.reply(passport_kg_ogpAfter18Change_tmp, parse_mode=types.ParseMode.HTML)
+    finally:
+        await recording_log()
+
 
 async def passport_ru_ogpAfter18Change(message : types.Message):
     try:
         await bot.send_message(message.from_user.id, passport_ru_ogpAfter18Change_tmp, parse_mode=types.ParseMode.HTML)
     except:
         await message.reply(passport_ru_ogpAfter18Change_tmp, parse_mode=types.ParseMode.HTML)
+    finally:
+        await recording_log()
 
 
 # ID паспорт
@@ -164,6 +197,8 @@ async def passport_kg_idp_cmd(message : types.Message):
         await bot.send_message(message.from_user.id, 'Ылайыктуу себебин тандаңыз', reply_markup=kb_kg_idp)
     except:
         await message.reply(moreInfortation_kg, reply_markup=urlKb_contactBot)
+    finally:
+        await recording_log()
 
 
 async def passport_ru_idp_cmd(message : types.Message):
@@ -171,6 +206,8 @@ async def passport_ru_idp_cmd(message : types.Message):
         await bot.send_message(message.from_user.id, 'Выберите нужный вариант', reply_markup=kb_ru_idp)
     except:
         await message.reply(moreInfortation_ru, reply_markup=urlKb_contactBot)
+    finally:
+        await recording_log()
 
 
 
@@ -180,12 +217,16 @@ async def passport_kg_idpBefore18_cmd(message : types.Message):
         await bot.send_message(message.from_user.id, passport_kg_idpBefore18_tmp, parse_mode=types.ParseMode.HTML)
     except:
         await message.reply(passport_kg_idpBefore18_tmp, parse_mode=types.ParseMode.HTML)
+    finally:
+        await recording_log()
 
 async def passport_ru_idpBefore18_cmd(message : types.Message):
     try:
         await bot.send_message(message.from_user.id, passport_ru_idpBefore18_tmp, parse_mode=types.ParseMode.HTML)
     except:
         await message.reply(passport_ru_idpBefore18_tmp, parse_mode=types.ParseMode.HTML)
+    finally:
+        await recording_log()
 
 
 
@@ -194,6 +235,8 @@ async def passport_kg_idpAfter18_cmd(message : types.Message):
         await bot.send_message(message.from_user.id, 'Ылайыктуу себебин тандаңыз', reply_markup=kb_kg_idpAfter18)
     except:
         await message.reply(moreInfortation_kg, reply_markup=urlKb_contactBot)
+    finally:
+        await recording_log()
 
 
 async def passport_ru_idpAfter18_cmd(message : types.Message):
@@ -201,6 +244,8 @@ async def passport_ru_idpAfter18_cmd(message : types.Message):
         await bot.send_message(message.from_user.id, 'Выберите нужный вариант', reply_markup=kb_ru_idpAfter18)
     except:
         await message.reply(moreInfortation_ru, reply_markup=urlKb_contactBot)
+    finally:
+        await recording_log()
 
 
 
@@ -212,6 +257,8 @@ async def passport_ru_idpAfter18Tern_cmd(message : types.Message):
         await bot.send_message(message.from_user.id, passport_ru_idpAfter18Tern_tmp, parse_mode=types.ParseMode.HTML)
     except:
         await message.reply(passport_ru_idpAfter18Tern_tmp, parse_mode=types.ParseMode.HTML)
+    finally:
+        await recording_log()
 
 
 async def passport_kg_idpAfter18Loss_cmd(message : types.Message):
@@ -219,12 +266,16 @@ async def passport_kg_idpAfter18Loss_cmd(message : types.Message):
         await bot.send_message(message.from_user.id, passport_kg_idpAfter18Loss_tmp, parse_mode=types.ParseMode.HTML)
     except:
         await message.reply(passport_kg_idpAfter18Loss_tmp, parse_mode=types.ParseMode.HTML)
+    finally:
+        await recording_log()
 
 async def passport_ru_idpAfter18Loss_cmd(message : types.Message):
     try:
         await bot.send_message(message.from_user.id, passport_ru_idpAfter18Loss_tmp, parse_mode=types.ParseMode.HTML)
     except:
         await message.reply(passport_ru_idpAfter18Loss_tmp, parse_mode=types.ParseMode.HTML)
+    finally:
+        await recording_log()
 
 
 async def passport_kg_idpAfter18Change_cmd(message : types.Message):
@@ -232,12 +283,16 @@ async def passport_kg_idpAfter18Change_cmd(message : types.Message):
         await bot.send_message(message.from_user.id, passport_kg_idpAfter18Change_tmp, parse_mode=types.ParseMode.HTML)
     except:
         await message.reply(passport_kg_idpAfter18Change_tmp, parse_mode=types.ParseMode.HTML)
+    finally:
+        await recording_log()
 
 async def passport_ru_idpAfter18Change_cmd(message : types.Message):
     try:
         await bot.send_message(message.from_user.id, passport_ru_idpAfter18Change_tmp, parse_mode=types.ParseMode.HTML)
     except:
         await message.reply(passport_ru_idpAfter18Change_tmp, parse_mode=types.ParseMode.HTML)
+    finally:
+        await recording_log()
 
 
 # Водительское удостоверение
@@ -246,12 +301,16 @@ async def driversLincense_kg_cmd(message : types.Message):
         await bot.send_message(message.from_user.id, driversLincense_kg_tmp, parse_mode=types.ParseMode.HTML)
     except:
         await message.reply(driversLincense_kg_tmp, parse_mode=types.ParseMode.HTML)
+    finally:
+        await recording_log()
 
 async def driversLincense_ru_cmd(message : types.Message):
     try:
         await bot.send_message(message.from_user.id, driversLincense_ru_tmp, parse_mode=types.ParseMode.HTML)
     except:
         await message.reply(driversLincense_ru_tmp, parse_mode=types.ParseMode.HTML)
+    finally:
+        await recording_log()
 
 
 
@@ -261,12 +320,16 @@ async def preRegstration_kg_cmd(message : types.Message):
         await bot.send_message(message.from_user.id, 'Алдын ала катталуу үчүн төмөндөгү шилтемени басыңыз:', reply_markup=urlKb_kg_preReg)
     except:
         await message.reply('Алдын ала катталуу үчүн төмөндөгү шилтемени басыңыз:', reply_markup=urlKb_kg_preReg)
+    finally:
+        await recording_log()
 
 async def preRegstration_ru_cmd(message : types.Message):
     try:
         await bot.send_message(message.from_user.id, 'Для записи необходимо перейти по ссылке ниже:', reply_markup=urlKb_ru_preReg)
     except:
         await message.reply('Для записи необходимо перейти по ссылке ниже:', reply_markup=urlKb_ru_preReg)
+    finally:
+        await recording_log()
 
 
 # Контакты
@@ -275,12 +338,16 @@ async def contacts_kg_cmd(message :types.Message):
         await bot.send_message(message.from_user.id, contact_kg_tmp, parse_mode=types.ParseMode.HTML, reply_markup=urlKb_kg_contact)
     except:
         await message.reply(contact_kg_tmp, parse_mode=types.ParseMode.HTML, reply_markup=urlKb_kg_contact)
+    finally:
+        await recording_log()
 
 async def contacts_ru_cmd(message :types.Message):
     try:
         await bot.send_message(message.from_user.id, contact_ru_tmp, parse_mode=types.ParseMode.HTML, reply_markup=urlKb_ru_contact)
     except:
         await message.reply(contact_ru_tmp, parse_mode=types.ParseMode.HTML, reply_markup=urlKb_ru_contact)
+    finally:
+        await recording_log()
 
 
 # Свидетельство о возвращении на Родину----------------------------------------------------------------------
@@ -289,6 +356,8 @@ async def svr_kg_cmd(message : types.Message):
         await bot.send_message(message.from_user.id, 'Ылайыктуу себебин тандаңыз', reply_markup=kb_kg_svr)
     except:
         await message.reply(moreInfortation_kg, reply_markup=urlKb_contactBot)
+    finally:
+        await recording_log()
 
 
 async def svr_ru_cmd(message : types.Message):
@@ -296,6 +365,8 @@ async def svr_ru_cmd(message : types.Message):
         await bot.send_message(message.from_user.id, 'Выберите нужный вариант', reply_markup=kb_ru_svr)
     except:
         await message.reply(moreInfortation_ru, reply_markup=urlKb_contactBot)
+    finally:
+        await recording_log()
 
 
 async def svrBefore18_kg_cmd(message : types.Message):
@@ -303,24 +374,32 @@ async def svrBefore18_kg_cmd(message : types.Message):
         await bot.send_message(message.from_user.id, svrBefore18_kg_tmp, parse_mode=types.ParseMode.HTML)
     except:
         await message.reply(svrBefore18_kg_tmp, parse_mode=types.ParseMode.HTML)
+    finally:
+        await recording_log()
 
 async def svrBefore18_ru_cmd(message : types.Message):
     try:
         await bot.send_message(message.from_user.id, svrBefore18_ru_tmp, parse_mode=types.ParseMode.HTML)
     except:
         await message.reply(svrBefore18_ru_tmp, parse_mode=types.ParseMode.HTML)
+    finally:
+        await recording_log()
 
 async def svrAfter18_kg_cmd(message : types.Message):
     try:
         await bot.send_message(message.from_user.id, svrAfter18_kg_tmp, parse_mode=types.ParseMode.HTML)
     except:
         await message.reply(svrAfter18_kg_tmp, parse_mode=types.ParseMode.HTML)
+    finally:
+        await recording_log()
 
 async def svrAfter18_ru_cmd(message : types.Message):
     try:
         await bot.send_message(message.from_user.id, svrAfter18_ru_tmp, parse_mode=types.ParseMode.HTML)
     except:
         await message.reply(svrAfter18_ru_tmp, parse_mode=types.ParseMode.HTML)
+    finally:
+        await recording_log()
 
 
 
@@ -330,6 +409,8 @@ async def reclamation_kg_cmd(message : types.Message):
         await bot.send_message(message.from_user.id, reclamation_kg_tmp, reply_markup=kb_kg_reclamation, parse_mode=types.ParseMode.HTML)
     except:
         await message.reply(moreInfortation_kg, reply_markup=urlKb_contactBot)
+    finally:
+        await recording_log()
 
 
 async def reclamation_ru_cmd(message : types.Message):
@@ -337,6 +418,8 @@ async def reclamation_ru_cmd(message : types.Message):
         await bot.send_message(message.from_user.id, reclamation_ru_tmp, reply_markup=kb_ru_reclamation, parse_mode=types.ParseMode.HTML)
     except:
         await message.reply(moreInfortation_ru, reply_markup=urlKb_contactBot)
+    finally:
+        await recording_log()
 
 
 
@@ -345,12 +428,16 @@ async def reclamationCrimRec_kg_cmd(message : types.Message):
         await bot.send_message(message.from_user.id, reclamationCrimRec_kg_tmp, parse_mode=types.ParseMode.HTML)
     except:
         await message.reply(reclamationCrimRec_kg_tmp, parse_mode=types.ParseMode.HTML)
+    finally:
+        await recording_log()
 
 async def reclamationCrimRec_ru_cmd(message : types.Message):
     try:
         await bot.send_message(message.from_user.id, reclamationCrimRec_ru_tmp, parse_mode=types.ParseMode.HTML)
     except:
         await message.reply(reclamationCrimRec_ru_tmp, parse_mode=types.ParseMode.HTML)
+    finally:
+        await recording_log()
 
 
 async def reclamationAuthDL_kg_cmd(message : types.Message):
@@ -358,25 +445,33 @@ async def reclamationAuthDL_kg_cmd(message : types.Message):
         await bot.send_message(message.from_user.id, reclamationAuthDL_kg_tmp, parse_mode=types.ParseMode.HTML)
     except:
         await message.reply(reclamationAuthDL_kg_tmp, parse_mode=types.ParseMode.HTML)
+    finally:
+        await recording_log()
 
 async def reclamationAuthDL_ru_cmd(message : types.Message):
     try:
         await bot.send_message(message.from_user.id, reclamationAuthDL_ru_tmp, parse_mode=types.ParseMode.HTML)
     except:
         await message.reply(reclamationAuthDL_ru_tmp, parse_mode=types.ParseMode.HTML)
+    finally:
+        await recording_log()
 
 
 async def reclamationMarriage_kg_cmd(message : types.Message):
     try:
         await bot.send_message(message.from_user.id, reclamationMarriage_kg_tmp, parse_mode=types.ParseMode.HTML)
     except:
-        message.reply(reclamationMarriage_kg_tmp, parse_mode=types.ParseMode.HTML)
+        await message.reply(reclamationMarriage_kg_tmp, parse_mode=types.ParseMode.HTML)
+    finally:
+        await recording_log()
 
 async def reclamationMarriage_ru_cmd(message : types.Message):
     try:
         await bot.send_message(message.from_user.id, reclamationMarriage_ru_tmp, parse_mode=types.ParseMode.HTML)
     except:
         await message.reply(reclamationMarriage_ru_tmp, parse_mode=types.ParseMode.HTML)
+    finally:
+        await recording_log()
 
 
 
@@ -386,6 +481,8 @@ async def issuesMar_kg_cmd(message : types.Message):
         await bot.send_message(message.from_user.id, 'Ылайыктуу себебин тандаңыз', reply_markup=kb_kg_issuesMar)
     except:
         await message.reply(moreInfortation_kg, reply_markup=urlKb_contactBot)
+    finally:
+        await recording_log()
 
 
 async def issuesMar_ru_cmd(message : types.Message):
@@ -393,6 +490,8 @@ async def issuesMar_ru_cmd(message : types.Message):
         await bot.send_message(message.from_user.id, 'Выберите нужный вариант', reply_markup=kb_ru_issuesMar)
     except:
         await message.reply(moreInfortation_ru, reply_markup=urlKb_contactBot)
+    finally:
+        await recording_log()
 
 
 async def issuesMarRegistration_kg_cmd(message : types.Message):
@@ -400,24 +499,32 @@ async def issuesMarRegistration_kg_cmd(message : types.Message):
         await bot.send_message(message.from_user.id, issuesMarRegistration_kg_tmp, parse_mode=types.ParseMode.HTML)
     except:
         await message.reply(issuesMarRegistration_kg_tmp, parse_mode=types.ParseMode.HTML)
+    finally:
+        await recording_log()
 
 async def issuesMarRegistration_ru_cmd(message : types.Message):
     try:
         await bot.send_message(message.from_user.id, issuesMarRegistration_ru_tmp, parse_mode=types.ParseMode.HTML)
     except:
         await message.reply(issuesMarRegistration_ru_tmp, parse_mode=types.ParseMode.HTML)
+    finally:
+        await recording_log()
 
 async def issuesMarChild_kg_cmd(message : types.Message):
     try:
         await bot.send_message(message.from_user.id, issuesMarChild_kg_tmp, parse_mode=types.ParseMode.HTML)
     except:
         await message.reply(issuesMarChild_kg_tmp, parse_mode=types.ParseMode.HTML)
+    finally:
+        await recording_log()
 
 async def issuesMarChild_ru_cmd(message : types.Message):
     try:
         await bot.send_message(message.from_user.id, issuesMarChild_ru_tmp, parse_mode=types.ParseMode.HTML)
     except:
         await message.reply(issuesMarChild_ru_tmp, parse_mode=types.ParseMode.HTML)
+    finally:
+        await recording_log()
 
 
 
@@ -427,12 +534,16 @@ async def notaries_kg_cmd(message : types.Message):
         await bot.send_message(message.from_user.id, notaries_kg_tmp, parse_mode=types.ParseMode.HTML)
     except:
         await message.reply(notaries_kg_tmp, parse_mode=types.ParseMode.HTML)
+    finally:
+        await recording_log()
 
 async def notaries_ru_cmd(message : types.Message):
     try:
         await bot.send_message(message.from_user.id, notaries_ru_tmp, parse_mode=types.ParseMode.HTML)
     except:
         await message.reply(notaries_ru_tmp, parse_mode=types.ParseMode.HTML)
+    finally:
+        await recording_log()
 
 
 # Юридическая помощь
@@ -441,12 +552,16 @@ async def lawyesr_kg_cmd(message : types.Message):
         await bot.send_message(message.from_user.id, lawyesr_kg_tmp, parse_mode=types.ParseMode.HTML)
     except:
         await message.reply(lawyesr_kg_tmp, parse_mode=types.ParseMode.HTML)
+    finally:
+        await recording_log()
 
 async def lawyesr_ru_cmd(message : types.Message):
     try:
         await bot.send_message(message.from_user.id, lawyesr_ru_tmp, parse_mode=types.ParseMode.HTML)
     except:
         await message.reply(lawyesr_ru_tmp, parse_mode=types.ParseMode.HTML)
+    finally:
+        await recording_log()
 
 
 # Груз 200
@@ -455,16 +570,16 @@ async def cargo200_kg_cmd(message : types.Message):
         await bot.send_message(message.from_user.id, cargo200_kg_tmp, parse_mode=types.ParseMode.HTML)
     except:
         await message.reply(cargo200_kg_tmp, parse_mode=types.ParseMode.HTML)
+    finally:
+        await recording_log()
 
 async def cargo200_ru_cmd(message : types.Message):
     try:
         await bot.send_message(message.from_user.id, cargo200_ru_tmp, parse_mode=types.ParseMode.HTML)
     except:
         await message.reply(cargo200_ru_tmp, parse_mode=types.ParseMode.HTML)
-
-
-# Прочие ответы
-
+    finally:
+        await recording_log()
 
 
 # Хэндлеры для импорта------------------------------------------------------------------------------------
@@ -481,7 +596,7 @@ def register_handlers_client(dp : Dispatcher):
         'график' in message.text.lower() or 'адрес' in message.text.lower()
     )
 
-    dp.register_message_handler(consulate_open_kg_cmd, lambda message:
+    dp.register_message_handler(consulate_open_kg_cmd, recording_log, lambda message:
         'дарег' in message.text.lower() or 'иш тартиб' in message.text.lower()
         or 'кайсыл кундору иш' in message.text.lower()
     )

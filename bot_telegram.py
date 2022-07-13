@@ -3,7 +3,7 @@ from create_bot import dp
 
 
 async def on_startup(_):
-    print('Бот в сети')
+    print('Робот-консультант в сети')
 
 from handlers import client, admin, other
 

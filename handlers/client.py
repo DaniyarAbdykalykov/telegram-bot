@@ -463,6 +463,10 @@ async def cargo200_ru_cmd(message : types.Message):
         await message.reply(cargo200_ru_tmp, parse_mode=types.ParseMode.HTML)
 
 
+# Прочие ответы
+
+
+
 # Хэндлеры для импорта------------------------------------------------------------------------------------
 def register_handlers_client(dp : Dispatcher):
     dp.register_message_handler(command_start, commands=['start', 'help'])
@@ -492,6 +496,81 @@ def register_handlers_client(dp : Dispatcher):
         'паспорт' in message.text.lower() and 'оформ' in message.text.lower()
     )
 
+
+# ID паспорт
+    dp.register_message_handler(passport_kg_idp_cmd, lambda message:
+        'идентификациялык' in message.text.lower() and 'карт' in message.text.lower()
+    )
+ 
+    dp.register_message_handler(passport_ru_idp_cmd, lambda message:
+        'идентификационная' in message.text.lower() and 'карт' in message.text.lower()
+    )
+
+  
+    dp.register_message_handler(passport_kg_idpBefore18_cmd, lambda message:
+        'чыга элек' in message.text.lower() and 'id' in message.text.lower()
+        or 'балам' in message.text.lower() and 'айди' in message.text.lower()
+        or 'балам' in message.text.lower() and 'ади' in message.text.lower()    
+        or 'кыз' in message.text.lower() and 'айди' in message.text.lower()   
+        or 'кыз' in message.text.lower() and 'ади' in message.text.lower()    
+    )
+
+
+    dp.register_message_handler(passport_ru_idpBefore18_cmd, lambda message:
+        'id' in message.text.lower() and 'до 18 лет' in message.text.lower()
+        or 'ребен' in message.text.lower() and 'id' in message.text.lower()
+    )
+
+
+    dp.register_message_handler(passport_kg_idpAfter18_cmd, lambda message:
+        'чыккан' in message.text.lower() and 'id' in message.text.lower()
+    )
+
+
+    dp.register_message_handler(passport_ru_idpAfter18_cmd, lambda message:
+        'id' in message.text.lower() and 'старше 18' in message.text.lower()
+    )
+
+
+    dp.register_message_handler(passport_kg_idpAfter18Tern_cmd, lambda message:
+        'id' in message.text.lower() and 'мөөнөтү өтүп' in message.text.lower()
+        or 'айди' in message.text.lower() and 'срогу' in message.text.lower()
+        or 'айди' in message.text.lower() and 'алса' in message.text.lower()
+        or 'ади' in message.text.lower() and 'алма' in message.text.lower()
+        or 'айди' in message.text.lower() and 'алма' in message.text.lower()
+        or 'айди' in message.text.lower() and 'алса' in message.text.lower()
+        or 'айди' in message.text.lower() and 'керек' in message.text.lower()
+        or 'ади' in message.text.lower() and 'керек' in message.text.lower()
+    )
+
+    dp.register_message_handler(passport_ru_idpAfter18Tern_cmd, lambda message:
+        'исте' in message.text.lower() and 'id' in message.text.lower()
+        or 'id' in message.text.lower() and 'испорт' in message.text.lower()
+    )
+
+
+    dp.register_message_handler(passport_kg_idpAfter18Loss_cmd, lambda message:
+        'id' in message.text.lower() and 'жого' in message.text.lower()
+        or 'айди' in message.text.lower() and 'жого' in message.text.lower()
+        or 'айди' in message.text.lower() and 'уурд' in message.text.lower()
+    )
+
+    dp.register_message_handler(passport_ru_idpAfter18Loss_cmd, lambda message:
+        'теря' in message.text.lower() and 'id' in message.text.lower()
+        or 'кра' in message.text.lower() and 'id' in message.text.lower()
+    )
+
+
+    dp.register_message_handler(passport_kg_idpAfter18Change_cmd, lambda message:
+        'өзгөр' in message.text.lower() and 'id' in message.text.lower()
+    )
+
+
+    dp.register_message_handler(passport_ru_idpAfter18Change_cmd, lambda message:
+        'измен' in message.text.lower() and 'персональ' in message.text.lower() and 'id' in message.text.lower()
+    )
+
+
 # ОГП
     dp.register_message_handler(passport_kg_ogp_cmd, lambda message:
         'жалпы жарандык' in message.text.lower() and 'паспорт' in message.text.lower()
@@ -505,7 +584,7 @@ def register_handlers_client(dp : Dispatcher):
     dp.register_message_handler(passport_kg_ogpBefore18_cmd, lambda message:
         '18 жашка чейинки' in message.text.lower() and 'өспүрүмдөргө' in message.text.lower()
         or 'бала' in message.text.lower() and 'паспорт' in message.text.lower()
-        or 'кыз' in message.text.lower() and 'паспорт' in message.text.lower() and 'ал' in message.text.lower()    
+        or 'кыз' in message.text.lower() and 'паспорт' in message.text.lower()
     )
  
     dp.register_message_handler(passport_ru_ogpBefore18_cmd, lambda message:
@@ -522,14 +601,19 @@ def register_handlers_client(dp : Dispatcher):
   
     dp.register_message_handler(passport_ru_ogpAfter18_cmd, lambda message:
         'огп' in message.text.lower() and 'старше 18 лет' in message.text.lower()
+        or 'загран' in message.text.lower() and 'паспорт' in message.text.lower()
     )
 
  
     dp.register_message_handler(passport_kg_ogpAfter18Tern_cmd, lambda message:
         'паспорт' in message.text.lower() and 'мөөнөтү өтүп' in message.text.lower()
-        or 'срог' in message.text.lower() and 'бут' in message.text.lower()
-        or 'паспорт' in message.text.lower() and 'алма' in message.text.lower()
-        or 'паспорт' in message.text.lower() and 'алса' in message.text.lower()
+        or 'срог' in message.text.lower() and 'паспор' in message.text.lower()
+        or 'паспор' in message.text.lower() and 'алма' in message.text.lower()
+        or 'паспур' in message.text.lower() and 'алма' in message.text.lower()
+        or 'паспор' in message.text.lower() and 'алса' in message.text.lower()
+        or 'паспур' in message.text.lower() and 'алса' in message.text.lower()
+        or 'паспор' in message.text.lower() and 'керек' in message.text.lower()
+        or 'паспур' in message.text.lower() and 'керек' in message.text.lower()
     )
  
     dp.register_message_handler(passport_ru_ogpAfter18Tern_cmd, lambda message:
@@ -563,69 +647,6 @@ def register_handlers_client(dp : Dispatcher):
         and 'данн' in message.text.lower() and 'огп' in message.text.lower()
     )
 
-# ID паспорт
-    dp.register_message_handler(passport_kg_idp_cmd, lambda message:
-        'идентификациялык' in message.text.lower() and 'карт' in message.text.lower()
-    )
- 
-    dp.register_message_handler(passport_ru_idp_cmd, lambda message:
-        'идентификационная' in message.text.lower() and 'карт' in message.text.lower()
-    )
-
-  
-    dp.register_message_handler(passport_kg_idpBefore18_cmd, lambda message:
-        'чыга элек' in message.text.lower() and 'id' in message.text.lower()
-        or 'балам' in message.text.lower() and 'айди' in message.text.lower()
-    )
-
-
-    dp.register_message_handler(passport_ru_idpBefore18_cmd, lambda message:
-        'id' in message.text.lower() and 'до 18 лет' in message.text.lower()
-        or 'ребен' in message.text.lower() and 'id' in message.text.lower()
-    )
-
-
-    dp.register_message_handler(passport_kg_idpAfter18_cmd, lambda message:
-        'чыккан' in message.text.lower() and 'id' in message.text.lower()
-    )
-
-
-    dp.register_message_handler(passport_ru_idpAfter18_cmd, lambda message:
-        'id' in message.text.lower() and 'старше 18' in message.text.lower()
-    )
-
-
-    dp.register_message_handler(passport_kg_idpAfter18Tern_cmd, lambda message:
-        'id' in message.text.lower() and 'мөөнөтү өтүп' in message.text.lower()
-        or 'айди' in message.text.lower() and 'срогу' in message.text.lower()
-    )
-
-    dp.register_message_handler(passport_ru_idpAfter18Tern_cmd, lambda message:
-        'исте' in message.text.lower() and 'id' in message.text.lower()
-        or 'id' in message.text.lower() and 'испорт' in message.text.lower()
-    )
-
-
-    dp.register_message_handler(passport_kg_idpAfter18Loss_cmd, lambda message:
-        'id' in message.text.lower() and 'жого' in message.text.lower()
-        or 'айди' in message.text.lower() and 'жого' in message.text.lower()
-        or 'айди' in message.text.lower() and 'уурд' in message.text.lower()
-    )
-
-    dp.register_message_handler(passport_ru_idpAfter18Loss_cmd, lambda message:
-        'теря' in message.text.lower() and 'id' in message.text.lower()
-        or 'кра' in message.text.lower() and 'id' in message.text.lower()
-    )
-
-
-    dp.register_message_handler(passport_kg_idpAfter18Change_cmd, lambda message:
-        'өзгөр' in message.text.lower() and 'id' in message.text.lower()
-    )
-
-
-    dp.register_message_handler(passport_ru_idpAfter18Change_cmd, lambda message:
-        'измен' in message.text.lower() and 'персональ' in message.text.lower() and 'id' in message.text.lower()
-    )
 
 
 # Водительское удостоверение
@@ -716,14 +737,14 @@ def register_handlers_client(dp : Dispatcher):
 
     dp.register_message_handler(reclamationCrimRec_kg_cmd, lambda message:
         'сотто' in message.text.lower() and 'маалымкат'
-        or 'сотто' in message.text.lower() and 'справка'    
-        or 'сотто' in message.text.lower() and 'кагаз'
+        or 'сотто' in message.text.lower() and 'справка' in message.text.lower()
+        or 'сотто' in message.text.lower() and 'кагаз' in message.text.lower()
     )
 
     dp.register_message_handler(reclamationCrimRec_ru_cmd, lambda message:
         'справк' in message.text.lower() and 'отсутств' in message.text.lower() and 'судимост' in message.text.lower()
         or 'справк' in message.text.lower() and 'несуд' in message.text.lower()
-        or 'справк' in message.text.lower() and 'судим'   
+        or 'справк' in message.text.lower() and 'судим' in message.text.lower()
     )
 
 
@@ -777,8 +798,13 @@ def register_handlers_client(dp : Dispatcher):
     )
 
 
+# Вопросы нотариата
     dp.register_message_handler(notaries_kg_cmd, lambda message:
         'нотари' in message.text.lower() and 'маселе' in message.text.lower()
+        or 'доверенность' in message.text.lower() and 'жазайсы' in message.text.lower()
+        or 'довереност' in message.text.lower() and 'жазайсы' in message.text.lower()
+        or 'доверенность' in message.text.lower() and 'кыласы' in message.text.lower()
+        or 'довереност' in message.text.lower() and 'кыласы' in message.text.lower()
     )
         
     dp.register_message_handler(notaries_ru_cmd, lambda message:

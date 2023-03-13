@@ -596,7 +596,7 @@ def register_handlers_client(dp : Dispatcher):
         'график' in message.text.lower() or 'адрес' in message.text.lower()
     )
 
-    dp.register_message_handler(consulate_open_kg_cmd, recording_log, lambda message:
+    dp.register_message_handler(consulate_open_kg_cmd, lambda message:
         'дарег' in message.text.lower() or 'иш тартиб' in message.text.lower()
         or 'кайсыл кундору иш' in message.text.lower()
     )

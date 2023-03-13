@@ -48,7 +48,7 @@ async def consulate_open_ru_cmd(message : types.Message):
     except:
         await message.reply(consulate_open_ru_tmp, parse_mode=types.ParseMode.HTML)
     finally:
-        await recording_log()        
+        await recording_log(message)        
 
 async def consulate_open_kg_cmd(message : types.Message):
     try:
@@ -56,7 +56,7 @@ async def consulate_open_kg_cmd(message : types.Message):
     except:
         await message.reply(consulate_open_kg_tmp, parse_mode=types.ParseMode.HTML)
     finally:
-        await recording_log()        
+        await recording_log(message)        
 
 
 
@@ -75,7 +75,7 @@ async def passport_ru_cmd(message : types.Message):
     except:
         await message.reply(moreInfortation_ru, reply_markup=urlKb_contactBot)
     finally:
-        await recording_log()
+        await recording_log(message)
 
 
 # ОГП
@@ -85,7 +85,7 @@ async def passport_kg_ogp_cmd(message : types.Message):
     except:
         await message.reply(moreInfortation_kg, reply_markup=urlKb_contactBot)
     finally:
-        await recording_log()
+        await recording_log(message)
 
 
 async def passport_ru_ogp_cmd(message : types.Message):
@@ -94,7 +94,7 @@ async def passport_ru_ogp_cmd(message : types.Message):
     except:
         await message.reply(moreInfortation_ru, reply_markup=urlKb_contactBot)
     finally:
-        await recording_log()
+        await recording_log(message)
 
 
 
@@ -104,7 +104,7 @@ async def passport_kg_ogpBefore18_cmd(message : types.Message):
     except:
         await message.reply(passport_kg_ogpBefore18_tmp, parse_mode=types.ParseMode.HTML)
     finally:
-        await recording_log()
+        await recording_log(message)
 
 
 async def passport_ru_ogpBefore18_cmd(message : types.Message):
@@ -113,7 +113,7 @@ async def passport_ru_ogpBefore18_cmd(message : types.Message):
     except:
         await message.reply(passport_ru_ogpBefore18_tmp, parse_mode=types.ParseMode.HTML)
     finally:
-        await recording_log()
+        await recording_log(message)
 
 
 
@@ -123,7 +123,7 @@ async def passport_kg_ogpAfter18_cmd(message : types.Message):
     except:
         await message.reply(moreInfortation_kg, reply_markup=urlKb_contactBot)
     finally:
-        await recording_log()
+        await recording_log(message)
 
 
 async def passport_ru_ogpAfter18_cmd(message : types.Message):
@@ -132,7 +132,7 @@ async def passport_ru_ogpAfter18_cmd(message : types.Message):
     except:
         await message.reply(moreInfortation_ru, reply_markup=urlKb_contactBot)
     finally:
-        await recording_log()
+        await recording_log(message)
 
 
 
@@ -143,7 +143,7 @@ async def passport_kg_ogpAfter18Tern_cmd(message : types.Message):
     except:
         await message.reply(passport_kg_ogpAfter18Tern_tmp, parse_mode=types.ParseMode.HTML)
     finally:
-        await recording_log()
+        await recording_log(message)
 
 async def passport_ru_ogpAfter18Tern_cmd(message : types.Message):
     try:
@@ -151,7 +151,7 @@ async def passport_ru_ogpAfter18Tern_cmd(message : types.Message):
     except:
         await message.reply(passport_ru_ogpAfter18Tern_tmp, parse_mode=types.ParseMode.HTML)
     finally:
-        await recording_log()
+        await recording_log(message)
 
 
 
@@ -161,7 +161,7 @@ async def passport_kg_ogpAfter18Loss_cmd(message : types.Message):
     except:
         await message.reply(passport_kg_ogpAfter18Loss_tmp, parse_mode=types.ParseMode.HTML)
     finally:
-        await recording_log()
+        await recording_log(message)
 
 async def passport_ru_ogpAfter18Loss_cmd(message : types.Message):
     try:
@@ -169,7 +169,7 @@ async def passport_ru_ogpAfter18Loss_cmd(message : types.Message):
     except:
         await message.reply(passport_ru_ogpAfter18Loss_tmp, parse_mode=types.ParseMode.HTML)
     finally:
-        await recording_log()
+        await recording_log(message)
 
 
 
@@ -179,7 +179,7 @@ async def passport_kg_ogpAfter18Change(message : types.Message):
     except:
         await message.reply(passport_kg_ogpAfter18Change_tmp, parse_mode=types.ParseMode.HTML)
     finally:
-        await recording_log()
+        await recording_log(message)
 
 
 async def passport_ru_ogpAfter18Change(message : types.Message):
@@ -188,7 +188,7 @@ async def passport_ru_ogpAfter18Change(message : types.Message):
     except:
         await message.reply(passport_ru_ogpAfter18Change_tmp, parse_mode=types.ParseMode.HTML)
     finally:
-        await recording_log()
+        await recording_log(message)
 
 
 # ID паспорт
@@ -198,7 +198,7 @@ async def passport_kg_idp_cmd(message : types.Message):
     except:
         await message.reply(moreInfortation_kg, reply_markup=urlKb_contactBot)
     finally:
-        await recording_log()
+        await recording_log(message)
 
 
 async def passport_ru_idp_cmd(message : types.Message):
@@ -207,7 +207,7 @@ async def passport_ru_idp_cmd(message : types.Message):
     except:
         await message.reply(moreInfortation_ru, reply_markup=urlKb_contactBot)
     finally:
-        await recording_log()
+        await recording_log(message)
 
 
 
@@ -218,7 +218,7 @@ async def passport_kg_idpBefore18_cmd(message : types.Message):
     except:
         await message.reply(passport_kg_idpBefore18_tmp, parse_mode=types.ParseMode.HTML)
     finally:
-        await recording_log()
+        await recording_log(message)
 
 async def passport_ru_idpBefore18_cmd(message : types.Message):
     try:
@@ -226,7 +226,7 @@ async def passport_ru_idpBefore18_cmd(message : types.Message):
     except:
         await message.reply(passport_ru_idpBefore18_tmp, parse_mode=types.ParseMode.HTML)
     finally:
-        await recording_log()
+        await recording_log(message)
 
 
 
@@ -236,7 +236,7 @@ async def passport_kg_idpAfter18_cmd(message : types.Message):
     except:
         await message.reply(moreInfortation_kg, reply_markup=urlKb_contactBot)
     finally:
-        await recording_log()
+        await recording_log(message)
 
 
 async def passport_ru_idpAfter18_cmd(message : types.Message):
@@ -245,7 +245,7 @@ async def passport_ru_idpAfter18_cmd(message : types.Message):
     except:
         await message.reply(moreInfortation_ru, reply_markup=urlKb_contactBot)
     finally:
-        await recording_log()
+        await recording_log(message)
 
 
 
@@ -258,7 +258,7 @@ async def passport_ru_idpAfter18Tern_cmd(message : types.Message):
     except:
         await message.reply(passport_ru_idpAfter18Tern_tmp, parse_mode=types.ParseMode.HTML)
     finally:
-        await recording_log()
+        await recording_log(message)
 
 
 async def passport_kg_idpAfter18Loss_cmd(message : types.Message):
@@ -267,7 +267,7 @@ async def passport_kg_idpAfter18Loss_cmd(message : types.Message):
     except:
         await message.reply(passport_kg_idpAfter18Loss_tmp, parse_mode=types.ParseMode.HTML)
     finally:
-        await recording_log()
+        await recording_log(message)
 
 async def passport_ru_idpAfter18Loss_cmd(message : types.Message):
     try:
@@ -275,7 +275,7 @@ async def passport_ru_idpAfter18Loss_cmd(message : types.Message):
     except:
         await message.reply(passport_ru_idpAfter18Loss_tmp, parse_mode=types.ParseMode.HTML)
     finally:
-        await recording_log()
+        await recording_log(message)
 
 
 async def passport_kg_idpAfter18Change_cmd(message : types.Message):
@@ -284,7 +284,7 @@ async def passport_kg_idpAfter18Change_cmd(message : types.Message):
     except:
         await message.reply(passport_kg_idpAfter18Change_tmp, parse_mode=types.ParseMode.HTML)
     finally:
-        await recording_log()
+        await recording_log(message)
 
 async def passport_ru_idpAfter18Change_cmd(message : types.Message):
     try:
@@ -292,7 +292,7 @@ async def passport_ru_idpAfter18Change_cmd(message : types.Message):
     except:
         await message.reply(passport_ru_idpAfter18Change_tmp, parse_mode=types.ParseMode.HTML)
     finally:
-        await recording_log()
+        await recording_log(message)
 
 
 # Водительское удостоверение
@@ -302,7 +302,7 @@ async def driversLincense_kg_cmd(message : types.Message):
     except:
         await message.reply(driversLincense_kg_tmp, parse_mode=types.ParseMode.HTML)
     finally:
-        await recording_log()
+        await recording_log(message)
 
 async def driversLincense_ru_cmd(message : types.Message):
     try:
@@ -310,7 +310,7 @@ async def driversLincense_ru_cmd(message : types.Message):
     except:
         await message.reply(driversLincense_ru_tmp, parse_mode=types.ParseMode.HTML)
     finally:
-        await recording_log()
+        await recording_log(message)
 
 
 
@@ -321,7 +321,7 @@ async def preRegstration_kg_cmd(message : types.Message):
     except:
         await message.reply('Алдын ала катталуу үчүн төмөндөгү шилтемени басыңыз:', reply_markup=urlKb_kg_preReg)
     finally:
-        await recording_log()
+        await recording_log(message)
 
 async def preRegstration_ru_cmd(message : types.Message):
     try:
@@ -329,7 +329,7 @@ async def preRegstration_ru_cmd(message : types.Message):
     except:
         await message.reply('Для записи необходимо перейти по ссылке ниже:', reply_markup=urlKb_ru_preReg)
     finally:
-        await recording_log()
+        await recording_log(message)
 
 
 # Контакты
@@ -339,7 +339,7 @@ async def contacts_kg_cmd(message :types.Message):
     except:
         await message.reply(contact_kg_tmp, parse_mode=types.ParseMode.HTML, reply_markup=urlKb_kg_contact)
     finally:
-        await recording_log()
+        await recording_log(message)
 
 async def contacts_ru_cmd(message :types.Message):
     try:
@@ -347,7 +347,7 @@ async def contacts_ru_cmd(message :types.Message):
     except:
         await message.reply(contact_ru_tmp, parse_mode=types.ParseMode.HTML, reply_markup=urlKb_ru_contact)
     finally:
-        await recording_log()
+        await recording_log(message)
 
 
 # Свидетельство о возвращении на Родину----------------------------------------------------------------------
@@ -357,7 +357,7 @@ async def svr_kg_cmd(message : types.Message):
     except:
         await message.reply(moreInfortation_kg, reply_markup=urlKb_contactBot)
     finally:
-        await recording_log()
+        await recording_log(message)
 
 
 async def svr_ru_cmd(message : types.Message):
@@ -366,7 +366,7 @@ async def svr_ru_cmd(message : types.Message):
     except:
         await message.reply(moreInfortation_ru, reply_markup=urlKb_contactBot)
     finally:
-        await recording_log()
+        await recording_log(message)
 
 
 async def svrBefore18_kg_cmd(message : types.Message):
@@ -375,7 +375,7 @@ async def svrBefore18_kg_cmd(message : types.Message):
     except:
         await message.reply(svrBefore18_kg_tmp, parse_mode=types.ParseMode.HTML)
     finally:
-        await recording_log()
+        await recording_log(message)
 
 async def svrBefore18_ru_cmd(message : types.Message):
     try:
@@ -383,7 +383,7 @@ async def svrBefore18_ru_cmd(message : types.Message):
     except:
         await message.reply(svrBefore18_ru_tmp, parse_mode=types.ParseMode.HTML)
     finally:
-        await recording_log()
+        await recording_log(message)
 
 async def svrAfter18_kg_cmd(message : types.Message):
     try:
@@ -391,7 +391,7 @@ async def svrAfter18_kg_cmd(message : types.Message):
     except:
         await message.reply(svrAfter18_kg_tmp, parse_mode=types.ParseMode.HTML)
     finally:
-        await recording_log()
+        await recording_log(message)
 
 async def svrAfter18_ru_cmd(message : types.Message):
     try:
@@ -399,7 +399,7 @@ async def svrAfter18_ru_cmd(message : types.Message):
     except:
         await message.reply(svrAfter18_ru_tmp, parse_mode=types.ParseMode.HTML)
     finally:
-        await recording_log()
+        await recording_log(message)
 
 
 
@@ -410,7 +410,7 @@ async def reclamation_kg_cmd(message : types.Message):
     except:
         await message.reply(moreInfortation_kg, reply_markup=urlKb_contactBot)
     finally:
-        await recording_log()
+        await recording_log(message)
 
 
 async def reclamation_ru_cmd(message : types.Message):
@@ -419,7 +419,7 @@ async def reclamation_ru_cmd(message : types.Message):
     except:
         await message.reply(moreInfortation_ru, reply_markup=urlKb_contactBot)
     finally:
-        await recording_log()
+        await recording_log(message)
 
 
 
@@ -429,7 +429,7 @@ async def reclamationCrimRec_kg_cmd(message : types.Message):
     except:
         await message.reply(reclamationCrimRec_kg_tmp, parse_mode=types.ParseMode.HTML)
     finally:
-        await recording_log()
+        await recording_log(message)
 
 async def reclamationCrimRec_ru_cmd(message : types.Message):
     try:
@@ -437,7 +437,7 @@ async def reclamationCrimRec_ru_cmd(message : types.Message):
     except:
         await message.reply(reclamationCrimRec_ru_tmp, parse_mode=types.ParseMode.HTML)
     finally:
-        await recording_log()
+        await recording_log(message)
 
 
 async def reclamationAuthDL_kg_cmd(message : types.Message):
@@ -446,7 +446,7 @@ async def reclamationAuthDL_kg_cmd(message : types.Message):
     except:
         await message.reply(reclamationAuthDL_kg_tmp, parse_mode=types.ParseMode.HTML)
     finally:
-        await recording_log()
+        await recording_log(message)
 
 async def reclamationAuthDL_ru_cmd(message : types.Message):
     try:
@@ -454,7 +454,7 @@ async def reclamationAuthDL_ru_cmd(message : types.Message):
     except:
         await message.reply(reclamationAuthDL_ru_tmp, parse_mode=types.ParseMode.HTML)
     finally:
-        await recording_log()
+        await recording_log(message)
 
 
 async def reclamationMarriage_kg_cmd(message : types.Message):
@@ -463,7 +463,7 @@ async def reclamationMarriage_kg_cmd(message : types.Message):
     except:
         await message.reply(reclamationMarriage_kg_tmp, parse_mode=types.ParseMode.HTML)
     finally:
-        await recording_log()
+        await recording_log(message)
 
 async def reclamationMarriage_ru_cmd(message : types.Message):
     try:
@@ -471,7 +471,7 @@ async def reclamationMarriage_ru_cmd(message : types.Message):
     except:
         await message.reply(reclamationMarriage_ru_tmp, parse_mode=types.ParseMode.HTML)
     finally:
-        await recording_log()
+        await recording_log(message)
 
 
 
@@ -482,7 +482,7 @@ async def issuesMar_kg_cmd(message : types.Message):
     except:
         await message.reply(moreInfortation_kg, reply_markup=urlKb_contactBot)
     finally:
-        await recording_log()
+        await recording_log(message)
 
 
 async def issuesMar_ru_cmd(message : types.Message):
@@ -491,7 +491,7 @@ async def issuesMar_ru_cmd(message : types.Message):
     except:
         await message.reply(moreInfortation_ru, reply_markup=urlKb_contactBot)
     finally:
-        await recording_log()
+        await recording_log(message)
 
 
 async def issuesMarRegistration_kg_cmd(message : types.Message):
@@ -500,7 +500,7 @@ async def issuesMarRegistration_kg_cmd(message : types.Message):
     except:
         await message.reply(issuesMarRegistration_kg_tmp, parse_mode=types.ParseMode.HTML)
     finally:
-        await recording_log()
+        await recording_log(message)
 
 async def issuesMarRegistration_ru_cmd(message : types.Message):
     try:
@@ -508,7 +508,7 @@ async def issuesMarRegistration_ru_cmd(message : types.Message):
     except:
         await message.reply(issuesMarRegistration_ru_tmp, parse_mode=types.ParseMode.HTML)
     finally:
-        await recording_log()
+        await recording_log(message)
 
 async def issuesMarChild_kg_cmd(message : types.Message):
     try:
@@ -516,7 +516,7 @@ async def issuesMarChild_kg_cmd(message : types.Message):
     except:
         await message.reply(issuesMarChild_kg_tmp, parse_mode=types.ParseMode.HTML)
     finally:
-        await recording_log()
+        await recording_log(message)
 
 async def issuesMarChild_ru_cmd(message : types.Message):
     try:
@@ -524,7 +524,7 @@ async def issuesMarChild_ru_cmd(message : types.Message):
     except:
         await message.reply(issuesMarChild_ru_tmp, parse_mode=types.ParseMode.HTML)
     finally:
-        await recording_log()
+        await recording_log(message)
 
 
 
@@ -535,7 +535,7 @@ async def notaries_kg_cmd(message : types.Message):
     except:
         await message.reply(notaries_kg_tmp, parse_mode=types.ParseMode.HTML)
     finally:
-        await recording_log()
+        await recording_log(message)
 
 async def notaries_ru_cmd(message : types.Message):
     try:
@@ -543,7 +543,7 @@ async def notaries_ru_cmd(message : types.Message):
     except:
         await message.reply(notaries_ru_tmp, parse_mode=types.ParseMode.HTML)
     finally:
-        await recording_log()
+        await recording_log(message)
 
 
 # Юридическая помощь
@@ -553,7 +553,7 @@ async def lawyesr_kg_cmd(message : types.Message):
     except:
         await message.reply(lawyesr_kg_tmp, parse_mode=types.ParseMode.HTML)
     finally:
-        await recording_log()
+        await recording_log(message)
 
 async def lawyesr_ru_cmd(message : types.Message):
     try:
@@ -561,7 +561,7 @@ async def lawyesr_ru_cmd(message : types.Message):
     except:
         await message.reply(lawyesr_ru_tmp, parse_mode=types.ParseMode.HTML)
     finally:
-        await recording_log()
+        await recording_log(message)
 
 
 # Груз 200
@@ -571,7 +571,7 @@ async def cargo200_kg_cmd(message : types.Message):
     except:
         await message.reply(cargo200_kg_tmp, parse_mode=types.ParseMode.HTML)
     finally:
-        await recording_log()
+        await recording_log(message)
 
 async def cargo200_ru_cmd(message : types.Message):
     try:
@@ -579,7 +579,7 @@ async def cargo200_ru_cmd(message : types.Message):
     except:
         await message.reply(cargo200_ru_tmp, parse_mode=types.ParseMode.HTML)
     finally:
-        await recording_log()
+        await recording_log(message)
 
 
 # Хэндлеры для импорта------------------------------------------------------------------------------------

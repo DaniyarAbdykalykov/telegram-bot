@@ -4,7 +4,7 @@ import sqlite3
 from typing import final
 
 # Логирование 
-def recording_log(message : types.Message):
+async def recording_log(message : types.Message):
     try:
         conn = sqlite3.connect("dbTelegram_bot.db")
         cursor = conn.cursor()
@@ -13,7 +13,7 @@ def recording_log(message : types.Message):
         )
         conn.commit()
     except sqlite3.Error as error:
-        print("Error", error)
+        await print("Error", error)
     finally:
         if(conn):
             conn.close()

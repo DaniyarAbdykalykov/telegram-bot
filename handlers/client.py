@@ -67,7 +67,7 @@ async def passport_kg_cmd(message : types.Message):
     except:
         await message.reply(moreInfortation_kg, reply_markup=urlKb_contactBot)
     finally:
-        await recording_log()
+        await recording_log(message)
 
 async def passport_ru_cmd(message : types.Message):
     try:
@@ -581,6 +581,12 @@ async def cargo200_ru_cmd(message : types.Message):
     finally:
         await recording_log(message)
 
+async def undefined_message_cmd(message : types.Message):
+    try:
+        await bot.send_message(message.from_user.id, undefined_message_tmp, parse_mode=types.ParseMode.HTML)
+    finally:
+        await recording_log(message)
+
 
 # Хэндлеры для импорта------------------------------------------------------------------------------------
 def register_handlers_client(dp : Dispatcher):
@@ -945,3 +951,6 @@ def register_handlers_client(dp : Dispatcher):
         'груз' in message.text.lower() and '200' in message.text.lower()
     )
 
+# Неопределенные сообщения
+
+    dp.register_message_handler(undefined_message_cmd)

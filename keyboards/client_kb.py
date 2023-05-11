@@ -137,11 +137,14 @@ urlBtn_contactFb = InlineKeyboardButton(text='Facebook', url='https://www.facebo
 urlBtn_contactTelegram = InlineKeyboardButton(text='Telegram канал', url='https://t.me/kg_consul')
 urlBtn_contactBot = InlineKeyboardButton(text='Робот-консультант', url='https://t.me/kg_consulBot')
 
+urlBtn_kg_other_consulate = InlineKeyboardButton(text="КРнын РФдагы консулдук мекемелери", url='https://mfa.gov.kg/ru/dm/pkr-v-rf/menyu---inostrannoe/o-posolstve/konsulskiy-otdel/onsulskiy-otdel')
+urlBtn_ru_other_consulate = InlineKeyboardButton(text="Консульские учреждения КР в РФ", url='https://mfa.gov.kg/ru/dm/pkr-v-rf/menyu---inostrannoe/o-posolstve/konsulskiy-otdel/onsulskiy-otdel')
+
 urlKb_kg_contact = InlineKeyboardMarkup(row_width=1)
-urlKb_kg_contact.add(urlBtn_kg_contactSite).row(urlBtn_contactInst, urlBtn_contactFb).add(urlBtn_contactTelegram)
+urlKb_kg_contact.add(urlBtn_kg_contactSite).row(urlBtn_contactInst, urlBtn_contactFb).add(urlBtn_contactTelegram).add(urlBtn_kg_other_consulate)
 
 urlKb_ru_contact = InlineKeyboardMarkup(row_width=1)
-urlKb_ru_contact.add(urlBtn_ru_contactSite).row(urlBtn_contactInst, urlBtn_contactFb).add(urlBtn_contactTelegram)
+urlKb_ru_contact.add(urlBtn_ru_contactSite).row(urlBtn_contactInst, urlBtn_contactFb).add(urlBtn_contactTelegram).add(urlBtn_ru_other_consulate)
 
 urlKb_contactBot = InlineKeyboardMarkup(row_width=1)
 urlKb_contactBot.add(urlBtn_contactBot)

@@ -25,19 +25,19 @@ async def command_start(message : types.Message):
 
 # Выбор языка------------------------------------------------------------------------------------
 async def service_language_kg_cmd(message : types.Message):
-    await bot.send_message(message.from_user.id, 'Ылайыктуу себебин тандаңыз', reply_markup=kb_main_kg_menu)
+    await bot.send_message(message.from_user.id, option_kg_tmp, reply_markup=kb_main_kg_menu)
 
 async def service_language_ru_cmd(message : types.Message):
-    await bot.send_message(message.from_user.id, 'Выберите нужный вариант', reply_markup=kb_main_ru_menu)
+    await bot.send_message(message.from_user.id, option_ru_tmp, reply_markup=kb_main_ru_menu)
 
 
 
 # Главное меню------------------------------------------------------------------------------------
 async def mainMenu_kg_cmd(message : types.Message):
-    await bot.send_message(message.from_user.id, 'Ылайыктуу себебин тандаңыз', reply_markup=kb_main_kg_menu)
+    await bot.send_message(message.from_user.id, option_kg_tmp, reply_markup=kb_main_kg_menu)
 
 async def mainMenu_ru_cmd(message : types.Message):
-    await bot.send_message(message.from_user.id, 'Выберите нужный вариант', reply_markup=kb_main_ru_menu)
+    await bot.send_message(message.from_user.id, option_ru_tmp, reply_markup=kb_main_ru_menu)
 
 
 
@@ -81,7 +81,7 @@ async def passport_ru_cmd(message : types.Message):
 # ОГП
 async def passport_kg_ogp_cmd(message : types.Message):
     try:
-        await bot.send_message(message.from_user.id, 'Ылайыктуу себебин тандаңыз', reply_markup=kb_kg_ogp)
+        await bot.send_message(message.from_user.id, option_kg_tmp, reply_markup=kb_kg_ogp)
     except:
         await message.reply(moreInfortation_kg, reply_markup=urlKb_contactBot)
     finally:
@@ -90,7 +90,7 @@ async def passport_kg_ogp_cmd(message : types.Message):
 
 async def passport_ru_ogp_cmd(message : types.Message):
     try:
-        await bot.send_message(message.from_user.id, 'Выберите нужный вариант', reply_markup=kb_ru_ogp)
+        await bot.send_message(message.from_user.id, option_ru_tmp, reply_markup=kb_ru_ogp)
     except:
         await message.reply(moreInfortation_ru, reply_markup=urlKb_contactBot)
     finally:
@@ -119,7 +119,7 @@ async def passport_ru_ogpBefore18_cmd(message : types.Message):
 
 async def passport_kg_ogpAfter18_cmd(message : types.Message):
     try:
-        await bot.send_message(message.from_user.id, 'Ылайыктуу себебин тандаңыз', reply_markup=kb_kg_ogpAfter18)
+        await bot.send_message(message.from_user.id, option_kg_tmp, reply_markup=kb_kg_ogpAfter18)
     except:
         await message.reply(moreInfortation_kg, reply_markup=urlKb_contactBot)
     finally:
@@ -128,7 +128,7 @@ async def passport_kg_ogpAfter18_cmd(message : types.Message):
 
 async def passport_ru_ogpAfter18_cmd(message : types.Message):
     try:
-        await bot.send_message(message.from_user.id, 'Выберите нужный вариант', reply_markup=kb_ru_ogpAfter18)
+        await bot.send_message(message.from_user.id, option_ru_tmp, reply_markup=kb_ru_ogpAfter18)
     except:
         await message.reply(moreInfortation_ru, reply_markup=urlKb_contactBot)
     finally:
@@ -194,7 +194,7 @@ async def passport_ru_ogpAfter18Change(message : types.Message):
 # ID паспорт
 async def passport_kg_idp_cmd(message : types.Message):
     try:
-        await bot.send_message(message.from_user.id, 'Ылайыктуу себебин тандаңыз', reply_markup=kb_kg_idp)
+        await bot.send_message(message.from_user.id, option_kg_tmp, reply_markup=kb_kg_idp)
     except:
         await message.reply(moreInfortation_kg, reply_markup=urlKb_contactBot)
     finally:
@@ -203,7 +203,7 @@ async def passport_kg_idp_cmd(message : types.Message):
 
 async def passport_ru_idp_cmd(message : types.Message):
     try:
-        await bot.send_message(message.from_user.id, 'Выберите нужный вариант', reply_markup=kb_ru_idp)
+        await bot.send_message(message.from_user.id, option_ru_tmp, reply_markup=kb_ru_idp)
     except:
         await message.reply(moreInfortation_ru, reply_markup=urlKb_contactBot)
     finally:
@@ -232,7 +232,7 @@ async def passport_ru_idpBefore18_cmd(message : types.Message):
 
 async def passport_kg_idpAfter18_cmd(message : types.Message):
     try:
-        await bot.send_message(message.from_user.id, 'Ылайыктуу себебин тандаңыз', reply_markup=kb_kg_idpAfter18)
+        await bot.send_message(message.from_user.id, option_kg_tmp, reply_markup=kb_kg_idpAfter18)
     except:
         await message.reply(moreInfortation_kg, reply_markup=urlKb_contactBot)
     finally:
@@ -241,7 +241,7 @@ async def passport_kg_idpAfter18_cmd(message : types.Message):
 
 async def passport_ru_idpAfter18_cmd(message : types.Message):
     try:
-        await bot.send_message(message.from_user.id, 'Выберите нужный вариант', reply_markup=kb_ru_idpAfter18)
+        await bot.send_message(message.from_user.id, option_ru_tmp, reply_markup=kb_ru_idpAfter18)
     except:
         await message.reply(moreInfortation_ru, reply_markup=urlKb_contactBot)
     finally:
@@ -353,7 +353,7 @@ async def contacts_ru_cmd(message :types.Message):
 # Свидетельство о возвращении на Родину----------------------------------------------------------------------
 async def svr_kg_cmd(message : types.Message):
     try:
-        await bot.send_message(message.from_user.id, 'Ылайыктуу себебин тандаңыз', reply_markup=kb_kg_svr)
+        await bot.send_message(message.from_user.id, option_kg_tmp, reply_markup=kb_kg_svr)
     except:
         await message.reply(moreInfortation_kg, reply_markup=urlKb_contactBot)
     finally:
@@ -362,7 +362,7 @@ async def svr_kg_cmd(message : types.Message):
 
 async def svr_ru_cmd(message : types.Message):
     try:
-        await bot.send_message(message.from_user.id, 'Выберите нужный вариант', reply_markup=kb_ru_svr)
+        await bot.send_message(message.from_user.id, option_ru_tmp, reply_markup=kb_ru_svr)
     except:
         await message.reply(moreInfortation_ru, reply_markup=urlKb_contactBot)
     finally:
@@ -478,7 +478,7 @@ async def reclamationMarriage_ru_cmd(message : types.Message):
 # Вопросы ЗАГС
 async def issuesMar_kg_cmd(message : types.Message):
     try:
-        await bot.send_message(message.from_user.id, 'Ылайыктуу себебин тандаңыз', reply_markup=kb_kg_issuesMar)
+        await bot.send_message(message.from_user.id, option_kg_tmp, reply_markup=kb_kg_issuesMar)
     except:
         await message.reply(moreInfortation_kg, reply_markup=urlKb_contactBot)
     finally:
@@ -487,7 +487,7 @@ async def issuesMar_kg_cmd(message : types.Message):
 
 async def issuesMar_ru_cmd(message : types.Message):
     try:
-        await bot.send_message(message.from_user.id, 'Выберите нужный вариант', reply_markup=kb_ru_issuesMar)
+        await bot.send_message(message.from_user.id, option_ru_tmp, reply_markup=kb_ru_issuesMar)
     except:
         await message.reply(moreInfortation_ru, reply_markup=urlKb_contactBot)
     finally:
@@ -560,6 +560,24 @@ async def lawyesr_ru_cmd(message : types.Message):
         await bot.send_message(message.from_user.id, lawyesr_ru_tmp, parse_mode=types.ParseMode.HTML)
     except:
         await message.reply(lawyesr_ru_tmp, parse_mode=types.ParseMode.HTML)
+    finally:
+        await recording_log(message)
+
+
+# Мекен-карт
+async def meken_card_kg_cmd(message : types.Message):
+    try:
+        await bot.send_message(message.from_user.id, meken_card_kg_tmp, parse_mode=types.ParseMode.HTML, reply_markup=urlKb_kg_mecen_card)
+    except:
+        await message.reply(meken_card_kg_tmp, parse_mode=types.ParseMode.HTML)
+    finally:
+        await recording_log(message)
+
+async def meken_card_ru_cmd(message : types.Message):
+    try:
+        await bot.send_message(message.from_user.id, meken_card_ru_tmp, parse_mode=types.ParseMode.HTML, reply_markup=urlKb_ru_mecen_card)
+    except:
+        await message.reply(meken_card_ru_tmp, parse_mode=types.ParseMode.HTML)
     finally:
         await recording_log(message)
 
@@ -770,18 +788,6 @@ def register_handlers_client(dp : Dispatcher):
 
 
 
-# Водительское удостоверение
-    dp.register_message_handler(driversLincense_kg_cmd, lambda message:
-        'айдоочу' in message.text.lower() and 'күбөлү' in message.text.lower()
-        or 'права' in message.text.lower() and 'ал' in message.text.lower()
-    )
-
-    dp.register_message_handler(driversLincense_ru_cmd, lambda message:
-        'водител' in message.text.lower() and 'удостоверен' in message.text.lower()
-        or 'права' in message.text.lower() and 'мен' in message.text.lower()
-    )
-
-
 # Электронная очередь-------------------------------------------------------------------------------
     dp.register_message_handler(preRegstration_kg_cmd, lambda message:
         'электрондук' in message.text.lower() and 'иретке' in message.text.lower()
@@ -888,6 +894,19 @@ def register_handlers_client(dp : Dispatcher):
         or 'док' in message.text.lower() and 'семейн' in message.text.lower() and 'положен' in message.text.lower()
     )
 
+
+# Водительское удостоверение
+    dp.register_message_handler(driversLincense_kg_cmd, lambda message:
+        'айдоочу' in message.text.lower() and 'күбөлү' in message.text.lower()
+        or 'права' in message.text.lower() and 'ал' in message.text.lower()
+    )
+
+    dp.register_message_handler(driversLincense_ru_cmd, lambda message:
+        'водител' in message.text.lower() and 'удостоверен' in message.text.lower()
+        or 'права' in message.text.lower() and 'мен' in message.text.lower()
+    )
+
+
 # Вопросы ЗАГС-----------------------------------------------------------------------------------------
     dp.register_message_handler(issuesMar_kg_cmd, lambda message:
         'загс' in message.text.lower() and 'маселе' in message.text.lower()
@@ -940,6 +959,15 @@ def register_handlers_client(dp : Dispatcher):
     dp.register_message_handler(lawyesr_ru_cmd, lambda message:
         'юрид' in message.text.lower() and 'помощь' in message.text.lower()
         or 'юри' in message.text.lower() and 'консульт' in message.text.lower()    
+    )
+
+# Мекен-карт
+    dp.register_message_handler(meken_card_kg_cmd, lambda message:
+        'мекендеш' in message.text.lower() and 'статусу' in message.text.lower()
+    )
+
+    dp.register_message_handler(meken_card_ru_cmd, lambda message:
+        'статус' in message.text.lower() and 'соотечественника' in message.text.lower()
     )
 
 # Груз 200

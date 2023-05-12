@@ -108,6 +108,22 @@ btn_ru_lawyesr = KeyboardButton('Юридическая помощь')
 btn_kg_cargo200 = KeyboardButton('Жүк-200')
 btn_ru_cargo200 = KeyboardButton('Груз-200')
 
+
+# Мекен карт
+btn_kg_meken_card = KeyboardButton('Мекендеш статусу (Мекен-карт)')
+btn_ru_meken_card = KeyboardButton('Статус соотечественника (Мекен-карт)')
+
+
+urlBtn_kg_meken_card = InlineKeyboardButton(text="Керектүү документтердин тизмеси", url='https://mfa.gov.kg/kg/dm/posolstvo-kyrgyzskoy-respubliki-v-rossiyskoy-federacii/menyu---inostrannoe/konsulduk-maseleler/kyzmat/onsulduk-kyzmat')
+urlBtn_ru_meken_card = InlineKeyboardButton(text="Перечень необходимых документов", url='https://mfa.gov.kg/ru/dm/pkr-v-rf/menyu---inostrannoe/konsulskie-voprosy/uslugi/onsulskie-uslugi')
+
+urlKb_kg_mecen_card = InlineKeyboardMarkup(row_width=1)
+urlKb_kg_mecen_card.add(urlBtn_kg_meken_card)
+
+urlKb_ru_mecen_card = InlineKeyboardMarkup(row_width=1)
+urlKb_ru_mecen_card.add(urlBtn_ru_meken_card)
+
+
 # Предварительная регистрация
 btn_kg_preReg = KeyboardButton('Электрондук иретке катталуу')
 btn_ru_preReg = KeyboardButton('Электронная очередь')
@@ -226,12 +242,12 @@ kb_ru_issuesMar.add(btn_ru_issuesMarRegistration).add(btn_ru_issuesMarChild).add
 # Главное меню
 kb_main_kg_menu = ReplyKeyboardMarkup(resize_keyboard=True)
 kb_main_kg_menu.row(btn_kg_schedule, btn_kg_contacts).row(btn_kg_preReg, btn_kg_passport).add(btn_kg_driversLincense).add(btn_kg_svr).add(btn_kg_reclamation)\
-.row(btn_kg_issuesMar, btn_kg_notaries).row(btn_kg_lawyesr, btn_kg_cargo200)
+.row(btn_kg_issuesMar, btn_kg_notaries).row(btn_kg_lawyesr).add(btn_kg_meken_card)
 
 
 kb_main_ru_menu = ReplyKeyboardMarkup(resize_keyboard=True)
 kb_main_ru_menu.row(btn_ru_schedule, btn_ru_contacts).row(btn_ru_preReg, btn_ru_passport).add(btn_ru_driversLincense).add(btn_ru_svr).add(btn_ru_reclamation).\
-row(btn_ru_issuesMar, btn_ru_notaries).row(btn_ru_lawyesr, btn_ru_cargo200)
+row(btn_ru_issuesMar, btn_ru_notaries).row(btn_ru_lawyesr).add(btn_ru_meken_card)
 
 
 # kb_ru_schedule = ReplyKeyboardMarkup(resize_keyboard=True)

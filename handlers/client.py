@@ -564,6 +564,56 @@ async def lawyesr_ru_cmd(message : types.Message):
         await recording_log(message)
 
 
+# Консульский учет
+async def consular_registration_kg_cmd(message : types.Message):
+    try:
+        await bot.send_message(message.from_user.id, option_kg_tmp, reply_markup=kb_kg_consular_registration)
+    except:
+        await message.reply(moreInfortation_kg, reply_markup=urlKb_contactBot)
+    finally:
+        await recording_log(message)
+
+async def consular_registration_ru_cmd(message : types.Message):
+    try:
+        await bot.send_message(message.from_user.id, option_ru_tmp, reply_markup=kb_ru_consular_registration)
+    except:
+        await message.reply(moreInfortation_ru, reply_markup=urlKb_contactBot)
+    finally:
+        await recording_log(message)
+
+async def permanent_cons_reg_kg_cmd(message : types.Message):
+    try:
+        await bot.send_message(message.from_user.id, permanent_cons_reg_kg_tmp, parse_mode=types.ParseMode.HTML)
+    except:
+        await message.reply(permanent_cons_reg_kg_tmp, parse_mode=types.ParseMode.HTML)
+    finally:
+        await recording_log(message)
+
+async def permanent_cons_reg_ru_cmd(message : types.Message):
+    try:
+        await bot.send_message(message.from_user.id, permanent_cons_reg_ru_tmp, parse_mode=types.ParseMode.HTML)
+    except:
+        await message.reply(permanent_cons_reg_ru_tmp, parse_mode=types.ParseMode.HTML)
+    finally:
+        await recording_log(message)
+
+async def temporary_cons_reg_kg_cmd(message : types.Message):
+    try:
+        await bot.send_message(message.from_user.id, temporary_cons_reg_kg_tmp, parse_mode=types.ParseMode.HTML)
+    except:
+        await message.reply(temporary_cons_reg_kg_tmp, parse_mode=types.ParseMode.HTML)
+    finally:
+        await recording_log(message)
+
+async def temporary_cons_reg_ru_cmd(message : types.Message):
+    try:
+        await bot.send_message(message.from_user.id, temporary_cons_reg_ru_tmp, parse_mode=types.ParseMode.HTML)
+    except:
+        await message.reply(temporary_cons_reg_ru_tmp, parse_mode=types.ParseMode.HTML)
+    finally:
+        await recording_log(message)
+
+
 # Мекен-карт
 async def meken_card_kg_cmd(message : types.Message):
     try:
@@ -959,6 +1009,31 @@ def register_handlers_client(dp : Dispatcher):
     dp.register_message_handler(lawyesr_ru_cmd, lambda message:
         'юрид' in message.text.lower() and 'помощь' in message.text.lower()
         or 'юри' in message.text.lower() and 'консульт' in message.text.lower()    
+    )
+
+# Консульский учет
+    dp.register_message_handler(permanent_cons_reg_kg_cmd, lambda message:
+        'туруктуу' in message.text.lower() and 'консул' in message.text.lower() and 'каттоо' in message.text.lower()
+    )
+
+    dp.register_message_handler(permanent_cons_reg_ru_cmd, lambda message:
+        'постоянный' in message.text.lower() and 'консул' in message.text.lower() and 'учет' in message.text.lower()
+    )
+    
+    dp.register_message_handler(temporary_cons_reg_kg_cmd, lambda message:
+        'убак' in message.text.lower() and 'консул' in message.text.lower() and 'каттоо' in message.text.lower()
+    )
+
+    dp.register_message_handler(temporary_cons_reg_ru_cmd, lambda message:
+        'временный' in message.text.lower() and 'консул' in message.text.lower() and 'учет' in message.text.lower()
+    )
+
+    dp.register_message_handler(consular_registration_kg_cmd, lambda message:
+        'консул' in message.text.lower() and 'каттоо' in message.text.lower()
+    )
+
+    dp.register_message_handler(consular_registration_ru_cmd, lambda message:
+        'консул' in message.text.lower() and 'учет' in message.text.lower()
     )
 
 # Мекен-карт

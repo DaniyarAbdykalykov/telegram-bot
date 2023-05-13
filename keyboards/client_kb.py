@@ -124,6 +124,17 @@ urlKb_ru_mecen_card = InlineKeyboardMarkup(row_width=1)
 urlKb_ru_mecen_card.add(urlBtn_ru_meken_card)
 
 
+# Консулький учет
+btn_kg_consular_registration = KeyboardButton("Консулдук каттоо")
+btn_ru_consular_registration = KeyboardButton("Консульский учет")
+
+btn_kg_permanent_cons_reg = KeyboardButton('Туруктуу консулдук каттоо')
+btn_ru_permanent_cons_reg = KeyboardButton('Постоянный консульский учет')
+
+btn_kg_temporary_cons_reg = KeyboardButton('Убактылуу консулдук каттоо')
+btn_ru_temporary_cons_reg = KeyboardButton('Временный консульский учет')
+
+
 # Предварительная регистрация
 btn_kg_preReg = KeyboardButton('Электрондук иретке катталуу')
 btn_ru_preReg = KeyboardButton('Электронная очередь')
@@ -239,15 +250,23 @@ kb_ru_issuesMar = ReplyKeyboardMarkup(resize_keyboard=True)
 kb_ru_issuesMar.add(btn_ru_issuesMarRegistration).add(btn_ru_issuesMarChild).add(btn_ru_mainMenu)
 
 
+# Консулький учет
+kb_kg_consular_registration = ReplyKeyboardMarkup(resize_keyboard=True)
+kb_kg_consular_registration.add(btn_kg_permanent_cons_reg).add(btn_kg_temporary_cons_reg).add(btn_kg_mainMenu)
+
+kb_ru_consular_registration = ReplyKeyboardMarkup(resize_keyboard=True)
+kb_ru_consular_registration.add(btn_ru_permanent_cons_reg).add(btn_ru_temporary_cons_reg).add(btn_ru_mainMenu)
+
+
 # Главное меню
 kb_main_kg_menu = ReplyKeyboardMarkup(resize_keyboard=True)
 kb_main_kg_menu.row(btn_kg_schedule, btn_kg_contacts).row(btn_kg_preReg, btn_kg_passport).add(btn_kg_driversLincense).add(btn_kg_svr).add(btn_kg_reclamation)\
-.row(btn_kg_issuesMar, btn_kg_notaries).row(btn_kg_lawyesr).add(btn_kg_meken_card)
+.row(btn_kg_issuesMar, btn_kg_notaries).row(btn_kg_lawyesr, btn_kg_consular_registration).add(btn_kg_meken_card)
 
 
 kb_main_ru_menu = ReplyKeyboardMarkup(resize_keyboard=True)
 kb_main_ru_menu.row(btn_ru_schedule, btn_ru_contacts).row(btn_ru_preReg, btn_ru_passport).add(btn_ru_driversLincense).add(btn_ru_svr).add(btn_ru_reclamation).\
-row(btn_ru_issuesMar, btn_ru_notaries).row(btn_ru_lawyesr).add(btn_ru_meken_card)
+row(btn_ru_issuesMar, btn_ru_notaries).row(btn_ru_lawyesr, btn_ru_consular_registration).add(btn_ru_meken_card)
 
 
 # kb_ru_schedule = ReplyKeyboardMarkup(resize_keyboard=True)

@@ -135,6 +135,19 @@ btn_kg_temporary_cons_reg = KeyboardButton('Убактылуу консулду�
 btn_ru_temporary_cons_reg = KeyboardButton('Временный консульский учет')
 
 
+# Гражданство
+btn_kg_citizenship = KeyboardButton('Жарандык маселелер')
+btn_ru_citizenship = KeyboardButton('Вопросы гражданства')
+
+btn_kg_determinatio_citizenship = KeyboardButton('Кыргызстандын жарандыгына таандык экендигин аныктоо')
+btn_ru_determinatio_citizenship = KeyboardButton('Определение приднадлежности к гражданству Кыргызстана')
+
+
+btn_kg_withdrawal_from_citizenship = KeyboardButton('Кыргызстандын жарандыгынан чыгуу')
+btn_ru_withdrawal_from_citizenship = KeyboardButton('Выход из гражданства Кыргызстана')
+
+
+
 # Предварительная регистрация
 btn_kg_preReg = KeyboardButton('Электрондук иретке катталуу')
 btn_ru_preReg = KeyboardButton('Электронная очередь')
@@ -258,15 +271,23 @@ kb_ru_consular_registration = ReplyKeyboardMarkup(resize_keyboard=True)
 kb_ru_consular_registration.add(btn_ru_permanent_cons_reg).add(btn_ru_temporary_cons_reg).add(btn_ru_mainMenu)
 
 
+# Гржданство
+kb_kg_citizenship = ReplyKeyboardMarkup(resize_keyboard=True)
+kb_kg_citizenship.add(btn_kg_determinatio_citizenship).add(btn_kg_withdrawal_from_citizenship).add(btn_kg_mainMenu)
+
+kb_ru_citizenship = ReplyKeyboardMarkup(resize_keyboard=True)
+kb_ru_citizenship.add(btn_ru_determinatio_citizenship).add(btn_ru_withdrawal_from_citizenship).add(btn_ru_mainMenu)
+
+
 # Главное меню
 kb_main_kg_menu = ReplyKeyboardMarkup(resize_keyboard=True)
 kb_main_kg_menu.row(btn_kg_schedule, btn_kg_contacts).row(btn_kg_preReg, btn_kg_passport).add(btn_kg_driversLincense).add(btn_kg_svr).add(btn_kg_reclamation)\
-.row(btn_kg_issuesMar, btn_kg_notaries).row(btn_kg_lawyesr, btn_kg_consular_registration).add(btn_kg_meken_card)
+.row(btn_kg_issuesMar, btn_kg_notaries).row(btn_kg_lawyesr, btn_kg_consular_registration).add(btn_kg_citizenship).add(btn_kg_meken_card)
 
 
 kb_main_ru_menu = ReplyKeyboardMarkup(resize_keyboard=True)
 kb_main_ru_menu.row(btn_ru_schedule, btn_ru_contacts).row(btn_ru_preReg, btn_ru_passport).add(btn_ru_driversLincense).add(btn_ru_svr).add(btn_ru_reclamation).\
-row(btn_ru_issuesMar, btn_ru_notaries).row(btn_ru_lawyesr, btn_ru_consular_registration).add(btn_ru_meken_card)
+row(btn_ru_issuesMar, btn_ru_notaries).row(btn_ru_lawyesr, btn_ru_consular_registration).add(btn_ru_citizenship).add(btn_ru_meken_card)
 
 
 # kb_ru_schedule = ReplyKeyboardMarkup(resize_keyboard=True)

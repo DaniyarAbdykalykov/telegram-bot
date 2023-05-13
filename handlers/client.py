@@ -614,6 +614,56 @@ async def temporary_cons_reg_ru_cmd(message : types.Message):
         await recording_log(message)
 
 
+# Гражданство
+async def citizenship_kg_cmd(message : types.Message):
+    try:
+        await bot.send_message(message.from_user.id, option_kg_tmp, reply_markup=kb_kg_citizenship)
+    except:
+        await message.reply(moreInfortation_kg, reply_markup=urlKb_contactBot)
+    finally:
+        await recording_log(message)
+
+async def citizenship_ru_cmd(message : types.Message):
+    try:
+        await bot.send_message(message.from_user.id, option_ru_tmp, reply_markup=kb_ru_citizenship)
+    except:
+        await message.reply(moreInfortation_ru, reply_markup=urlKb_contactBot)
+    finally:
+        await recording_log(message)
+
+async def determinatio_citizenship_kg_cmd(message : types.Message):
+    try:
+        await bot.send_message(message.from_user.id, determinatio_citizenship_kg_tmp, parse_mode=types.ParseMode.HTML)
+    except:
+        await message.reply(determinatio_citizenship_kg_tmp, parse_mode=types.ParseMode.HTML)
+    finally:
+        await recording_log(message)
+
+async def determinatio_citizenship_ru_cmd(message : types.Message):
+    try:
+        await bot.send_message(message.from_user.id, determinatio_citizenship_ru_tmp, parse_mode=types.ParseMode.HTML)
+    except:
+        await message.reply(determinatio_citizenship_ru_tmp, parse_mode=types.ParseMode.HTML)
+    finally:
+        await recording_log(message)
+
+async def withdrawal_from_citizenship_kg_cmd(message : types.Message):
+    try:
+        await bot.send_message(message.from_user.id, withdrawal_from_citizenship_kg_tmp, parse_mode=types.ParseMode.HTML)
+    except:
+        await message.reply(withdrawal_from_citizenship_kg_tmp, parse_mode=types.ParseMode.HTML)
+    finally:
+        await recording_log(message)
+
+async def withdrawal_from_citizenship_ru_cmd(message : types.Message):
+    try:
+        await bot.send_message(message.from_user.id, withdrawal_from_citizenship_ru_tmp, parse_mode=types.ParseMode.HTML)
+    except:
+        await message.reply(withdrawal_from_citizenship_ru_tmp, parse_mode=types.ParseMode.HTML)
+    finally:
+        await recording_log(message)
+
+
 # Мекен-карт
 async def meken_card_kg_cmd(message : types.Message):
     try:
@@ -1035,6 +1085,33 @@ def register_handlers_client(dp : Dispatcher):
     dp.register_message_handler(consular_registration_ru_cmd, lambda message:
         'консул' in message.text.lower() and 'учет' in message.text.lower()
     )
+
+
+# Гражданство
+    dp.register_message_handler(determinatio_citizenship_kg_cmd, lambda message:
+        'жаранды' in message.text.lower() and 'экенди' in message.text.lower() and 'аныктоо' in message.text.lower()
+    )
+
+    dp.register_message_handler(determinatio_citizenship_ru_cmd, lambda message:
+        'определ' in message.text.lower() and 'приднадлеж' in message.text.lower() and 'граждан' in message.text.lower()
+    )
+
+    dp.register_message_handler(withdrawal_from_citizenship_kg_cmd, lambda message:
+        'жаранд' in message.text.lower() and 'чыгуу' in message.text.lower()
+    )
+
+    dp.register_message_handler(withdrawal_from_citizenship_kg_cmd, lambda message:
+        'выход' in message.text.lower() and 'гражданства' in message.text.lower()
+    )
+
+    dp.register_message_handler(citizenship_kg_cmd, lambda message:
+        'жарандык' in message.text.lower() and 'маселе' in message.text.lower()
+    )
+
+    dp.register_message_handler(citizenship_ru_cmd, lambda message:
+        'вопрос' in message.text.lower() and 'граждан' in message.text.lower()
+    )
+
 
 # Мекен-карт
     dp.register_message_handler(meken_card_kg_cmd, lambda message:

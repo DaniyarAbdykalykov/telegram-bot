@@ -134,13 +134,35 @@ btn_ru_permanent_cons_reg = KeyboardButton('Постоянный консуль�
 btn_kg_temporary_cons_reg = KeyboardButton('Убактылуу консулдук каттоо')
 btn_ru_temporary_cons_reg = KeyboardButton('Временный консульский учет')
 
+btn_kg_dereg_cons = KeyboardButton('Консулдук каттоодон чыгаруу')
+btn_ru_dereg_cons = KeyboardButton('Снятие с консульского учета')
+
+urlBtn_kg_download_cons_reg = InlineKeyboardButton(text="каттоо карточкасын көчүрүү", url='https://mfa.gov.kg/uploads/content/415/5d681ad9-05d2-3226-ba70-0b03d2e8cfa9.docx')
+urlBtn_ru_download_cons_reg = InlineKeyboardButton(text="скачать регистрационную карточку", url='https://mfa.gov.kg/uploads/content/415/5d681ad9-05d2-3226-ba70-0b03d2e8cfa9.docx')
+
+urlKb_kg_download_cons_reg = InlineKeyboardMarkup(row_width=1)
+urlKb_kg_download_cons_reg.add(urlBtn_kg_download_cons_reg)
+
+urlKb_ru_download_cons_reg = InlineKeyboardMarkup(row_width=1)
+urlKb_ru_download_cons_reg.add(urlBtn_ru_download_cons_reg)
+
 
 # Гражданство
-btn_kg_citizenship = KeyboardButton('Жарандык маселелер')
+urlBtn_kg_download_citizenship = InlineKeyboardButton(text="анкетаны көчүрүү", url='https://mfa.gov.kg/uploads/content/415/5d681ad9-05d2-3226-ba70-0b03d2e8cfa9.docx')
+urlBtn_ru_download_citizenship = InlineKeyboardButton(text="скачать анкету", url='https://mfa.gov.kg/uploads/content/411/a590c1e1-839b-3ee9-84d3-58e6c076eb47.doc')
+
+urlKb_kg_download_citizenship = InlineKeyboardMarkup(row_width=1)
+urlKb_kg_download_citizenship.add(urlBtn_kg_download_citizenship)
+
+urlKb_ru_download_citizenship = InlineKeyboardMarkup(row_width=1)
+urlKb_ru_download_citizenship.add(urlBtn_ru_download_citizenship)
+
+
+btn_kg_citizenship = KeyboardButton('Жарандык маселелери')
 btn_ru_citizenship = KeyboardButton('Вопросы гражданства')
 
 btn_kg_determinatio_citizenship = KeyboardButton('Кыргызстандын жарандыгына таандык экендигин аныктоо')
-btn_ru_determinatio_citizenship = KeyboardButton('Определение приднадлежности к гражданству Кыргызстана')
+btn_ru_determinatio_citizenship = KeyboardButton('Определение принадлежности к гражданству Кыргызстана')
 
 
 btn_kg_withdrawal_from_citizenship = KeyboardButton('Кыргызстандын жарандыгынан чыгуу')
@@ -265,10 +287,10 @@ kb_ru_issuesMar.add(btn_ru_issuesMarRegistration).add(btn_ru_issuesMarChild).add
 
 # Консулький учет
 kb_kg_consular_registration = ReplyKeyboardMarkup(resize_keyboard=True)
-kb_kg_consular_registration.add(btn_kg_permanent_cons_reg).add(btn_kg_temporary_cons_reg).add(btn_kg_mainMenu)
+kb_kg_consular_registration.add(btn_kg_permanent_cons_reg).add(btn_kg_temporary_cons_reg).add(btn_kg_dereg_cons).add(btn_kg_mainMenu)
 
 kb_ru_consular_registration = ReplyKeyboardMarkup(resize_keyboard=True)
-kb_ru_consular_registration.add(btn_ru_permanent_cons_reg).add(btn_ru_temporary_cons_reg).add(btn_ru_mainMenu)
+kb_ru_consular_registration.add(btn_ru_permanent_cons_reg).add(btn_ru_temporary_cons_reg).add(btn_ru_dereg_cons).add(btn_ru_mainMenu)
 
 
 # Гржданство

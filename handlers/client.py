@@ -565,6 +565,22 @@ async def lawyesr_ru_cmd(message : types.Message):
 
 
 # Консульский учет
+async def deregistration_cons_kg_cmd(message : types.Message):
+    try:
+        await bot.send_message(message.from_user.id, deregistration_cons_kg_tmp, parse_mode=types.ParseMode.HTML)
+    except:
+        await message.reply(deregistration_cons_kg_tmp, parse_mode=types.ParseMode.HTML)
+    finally:
+        await recording_log(message)
+
+async def deregistration_cons_ru_cmd(message : types.Message):
+    try:
+        await bot.send_message(message.from_user.id, deregistration_cons_ru_tmp, parse_mode=types.ParseMode.HTML)
+    except:
+        await message.reply(deregistration_cons_ru_tmp, parse_mode=types.ParseMode.HTML)
+    finally:
+        await recording_log(message)
+
 async def consular_registration_kg_cmd(message : types.Message):
     try:
         await bot.send_message(message.from_user.id, option_kg_tmp, reply_markup=kb_kg_consular_registration)
@@ -599,7 +615,7 @@ async def permanent_cons_reg_ru_cmd(message : types.Message):
 
 async def temporary_cons_reg_kg_cmd(message : types.Message):
     try:
-        await bot.send_message(message.from_user.id, temporary_cons_reg_kg_tmp, parse_mode=types.ParseMode.HTML)
+        await bot.send_message(message.from_user.id, temporary_cons_reg_kg_tmp, reply_markup=urlKb_kg_download_cons_reg, parse_mode=types.ParseMode.HTML)
     except:
         await message.reply(temporary_cons_reg_kg_tmp, parse_mode=types.ParseMode.HTML)
     finally:
@@ -607,7 +623,7 @@ async def temporary_cons_reg_kg_cmd(message : types.Message):
 
 async def temporary_cons_reg_ru_cmd(message : types.Message):
     try:
-        await bot.send_message(message.from_user.id, temporary_cons_reg_ru_tmp, parse_mode=types.ParseMode.HTML)
+        await bot.send_message(message.from_user.id, temporary_cons_reg_ru_tmp, reply_markup=urlKb_ru_download_cons_reg, parse_mode=types.ParseMode.HTML)
     except:
         await message.reply(temporary_cons_reg_ru_tmp, parse_mode=types.ParseMode.HTML)
     finally:
@@ -633,7 +649,7 @@ async def citizenship_ru_cmd(message : types.Message):
 
 async def determinatio_citizenship_kg_cmd(message : types.Message):
     try:
-        await bot.send_message(message.from_user.id, determinatio_citizenship_kg_tmp, parse_mode=types.ParseMode.HTML)
+        await bot.send_message(message.from_user.id, determinatio_citizenship_kg_tmp, reply_markup=urlKb_kg_download_citizenship, parse_mode=types.ParseMode.HTML)
     except:
         await message.reply(determinatio_citizenship_kg_tmp, parse_mode=types.ParseMode.HTML)
     finally:
@@ -641,7 +657,7 @@ async def determinatio_citizenship_kg_cmd(message : types.Message):
 
 async def determinatio_citizenship_ru_cmd(message : types.Message):
     try:
-        await bot.send_message(message.from_user.id, determinatio_citizenship_ru_tmp, parse_mode=types.ParseMode.HTML)
+        await bot.send_message(message.from_user.id, determinatio_citizenship_ru_tmp, reply_markup=urlKb_ru_download_citizenship, parse_mode=types.ParseMode.HTML)
     except:
         await message.reply(determinatio_citizenship_ru_tmp, parse_mode=types.ParseMode.HTML)
     finally:
@@ -1078,6 +1094,14 @@ def register_handlers_client(dp : Dispatcher):
         'временный' in message.text.lower() and 'консул' in message.text.lower() and 'учет' in message.text.lower()
     )
 
+    dp.register_message_handler(deregistration_cons_kg_cmd, lambda message:
+        'консул' in message.text.lower() and 'каттоо' in message.text.lower() and 'чыгар' in message.text.lower()
+    )
+
+    dp.register_message_handler(deregistration_cons_ru_cmd, lambda message:
+        'снятие' in message.text.lower() and 'консул' in message.text.lower() and 'учета' in message.text.lower()
+    )
+
     dp.register_message_handler(consular_registration_kg_cmd, lambda message:
         'консул' in message.text.lower() and 'каттоо' in message.text.lower()
     )
@@ -1093,7 +1117,7 @@ def register_handlers_client(dp : Dispatcher):
     )
 
     dp.register_message_handler(determinatio_citizenship_ru_cmd, lambda message:
-        'определ' in message.text.lower() and 'приднадлеж' in message.text.lower() and 'граждан' in message.text.lower()
+        'определ' in message.text.lower() and 'принадлеж' in message.text.lower() and 'граждан' in message.text.lower()
     )
 
     dp.register_message_handler(withdrawal_from_citizenship_kg_cmd, lambda message:
